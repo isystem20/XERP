@@ -7,18 +7,14 @@ using System.Threading.Tasks;
 
 namespace XERP.DataModel.SYSTEM
 {
-    public class Modules
+    public class Services
     {
         [Required]
         public Guid Id { get; set; }
         [Required]
-        public string ServiceId { get; set; }
-        [Required]
         public string Code { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
-        public string URL { get; set; }
         public string Description { get; set; }
         [Required]
         public string CreatedById { get; set; }
@@ -28,16 +24,5 @@ namespace XERP.DataModel.SYSTEM
         public DateTime LastModifiedAt { get; set; }
         public int VersionNo { get; set; }
         public string Status { get; set; }
-
-
-
-
-
-
-
-
-
-
-
     }
 }

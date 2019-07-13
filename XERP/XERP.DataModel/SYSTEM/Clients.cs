@@ -1,24 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace XERP.DataModel.SYSTEM
 {
-    public class Modules
+    public class Clients
     {
         [Required]
         public Guid Id { get; set; }
         [Required]
-        public string ServiceId { get; set; }
-        [Required]
+        [Column(TypeName = "varchar(50)")]
         public string Code { get; set; }
         [Required]
-        public string Name { get; set; }
+        [Column(TypeName = "varchar(100)")]
+        public string CompanyName { get; set; }
         [Required]
-        public string URL { get; set; }
+        [Column(TypeName = "varchar(500)")]
+        public string CompanyAddress { get; set; }
+        [Required]
+        [Column(TypeName = "varchar(200)")]
+        public string ContactPerson { get; set; }
+        [Required]
+        [Column(TypeName = "varchar(100)")]
+        public string Designation { get; set; }
+        public string IndustryType { get; set; }
         public string Description { get; set; }
         [Required]
         public string CreatedById { get; set; }
@@ -28,16 +37,5 @@ namespace XERP.DataModel.SYSTEM
         public DateTime LastModifiedAt { get; set; }
         public int VersionNo { get; set; }
         public string Status { get; set; }
-
-
-
-
-
-
-
-
-
-
-
     }
 }
