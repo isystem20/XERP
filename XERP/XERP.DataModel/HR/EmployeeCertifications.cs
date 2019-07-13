@@ -7,27 +7,37 @@ using System.Threading.Tasks;
 
 namespace XERP.DataModel.HR
 {
-    public class Departments
-    {
+    public class EmployeeCertifications {
         [Required]
-        public int Id { get; set; }
-        [Required]
-        public string Code { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string CompanyId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string EmployeeId { get; set; }
         [Required]
-        public string Description { get; set; }
+        public string CertificateId { get; set; }
+        [Required]
+        public string CertificateCustomName { get; set; }
+        [Required]
+        public string IssuedInstitution { get; set; }
+        [Required]
+        public string IssuedDate { get; set; }
+        [Required]
+        public string ValidityExpiration { get; set; }
+        [Required]
+        public string Remarks { get; set; }
         [Required]
         public string CreatedById { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        [Required]
         public string LastModifiedById { get; set; }
+        [Required]
         public DateTime LastModifiedAt { get; set; }
         [Required]
         public string VersionNo { get; set; }
         [Required]
-        public string Status { get; set; }
+        public string Status { get; set; }  
     }
+
 }

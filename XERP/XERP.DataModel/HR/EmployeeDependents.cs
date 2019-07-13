@@ -7,27 +7,34 @@ using System.Threading.Tasks;
 
 namespace XERP.DataModel.HR
 {
-    public class Departments
-    {
+    public class EmployeeDependents {
         [Required]
-        public int Id { get; set; }
-        [Required]
-        public string Code { get; set; }
+        public string Id { get; set; }
         [Required]
         public string CompanyId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string EmployeeId { get; set; }
         [Required]
-        public string Description { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        [Required]
+        public string Relation { get; set; }
+        [Required]
+        public DateTime Birthdate { get; set; }
         [Required]
         public string CreatedById { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        [Required]
         public string LastModifiedById { get; set; }
+        [Required]
         public DateTime LastModifiedAt { get; set; }
         [Required]
         public string VersionNo { get; set; }
         [Required]
-        public string Status { get; set; }
+        public string Status { get; set; }  
     }
+
+
 }

@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace XERP.DataModel.HR
 {
-
-    public class Sites {
+    public class EmployeeRanks {
         [Required]
         public Guid Id { get; set; }
         [Required]
@@ -22,11 +21,14 @@ namespace XERP.DataModel.HR
         [Required]
         public string CreatedById { get; set; }
         [Required]
-        public DateTime CreatedAt  { get; set; } = DateTime.Now;
-        public string LastModifiedById { get; set; }
-        public DateTime LastModifiedAt { get; set; }
-        public int VersionNo { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         [Required]
-        public string Status { get; set; } 
+        public string LastModifiedById { get; set; }
+        [Required]
+        public DateTime LastModifiedAt { get; set; }
+        [Required]
+        public string VersionNo { get; set; }
+        [Required]
+        public string Status { get; set; }  
     }
 }
