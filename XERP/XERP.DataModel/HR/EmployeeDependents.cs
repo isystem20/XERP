@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,31 +10,38 @@ namespace XERP.DataModel.HR
 {
     public class EmployeeDependents {
         [Required]
+        [Key]
         public string Id { get; set; }
         [Required]
+        [Column(TypeName = "varchar(50)")]
         public string CompanyId { get; set; }
         [Required]
+        [Column(TypeName = "varchar(50)")]
         public string EmployeeId { get; set; }
         [Required]
+        [Column(TypeName = "varchar(100)")]
         public string FirstName { get; set; }
         [Required]
+        [Column(TypeName = "varchar(100)")]
         public string LastName { get; set; }
         [Required]
+        [Column(TypeName = "varchar(50)")]
         public string Relation { get; set; }
         [Required]
         public DateTime Birthdate { get; set; }
         [Required]
+        [Column(TypeName = "varchar(50)")]
         public string CreatedById { get; set; }
         [Required]
+        [Column(TypeName = "varchar(50)")]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        [Required]
+        [Column(TypeName = "varchar(50)")]
         public string LastModifiedById { get; set; }
-        [Required]
         public DateTime LastModifiedAt { get; set; }
-        [Required]
-        public string VersionNo { get; set; }
-        [Required]
-        public string Status { get; set; }  
+
+        public int VersionNo { get; set; } = 1;
+        //[Required]
+        //public string Status { get; set; }  
     }
 
 
