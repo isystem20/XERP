@@ -12,3 +12,6 @@ C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.WorkForce\obj\Debug\netcoreapp
 C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.WorkForce\obj\Debug\netcoreapp2.2\XERP.Core.WorkForce.RazorTargetAssemblyInfo.cache
 C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.WorkForce\obj\Debug\netcoreapp2.2\XERP.Core.WorkForce.dll
 C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.WorkForce\obj\Debug\netcoreapp2.2\XERP.Core.WorkForce.pdb
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.WorkForce\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.WorkForce\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.WorkForce\bin\Debug\netcoreapp2.2\Properties\launchSettings.json

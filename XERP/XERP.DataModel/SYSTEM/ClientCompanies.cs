@@ -18,7 +18,7 @@ namespace XERP.DataModel.SYSTEM
 
         [Required]
         [Column(TypeName = "varchar(50)")]
-        public string ClientId { get; set; }
+        public Guid ClientId { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(100)")]

@@ -12,18 +12,18 @@ namespace XERP.DataModel.SYSTEM
 {
     public class ApplicationUsers : IdentityUser
     {
-        [Column(TypeName = "nvarchar(50)")]
+        [Column(TypeName = "varchar(50)")]
         public string UserCode { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
-        public string ClientId { get; set; }
-        [Column(TypeName = "nvarchar(50)")]
-        public string CompanyId { get; set; }
+        [Column(TypeName = "varchar(50)")]
+        public Guid ClientId { get; set; }
+        [Column(TypeName = "varchar(50)")]
+        public Guid CompanyId { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
-        public string? EmployeeId { get; set; }
+        [Column(TypeName = "varchar(50)")]
+        public Guid EmployeeId { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "varchar(100)")]
         public string SecurityHash { get; set; }
 
         public bool PasswordNeverExpires { get; set; }

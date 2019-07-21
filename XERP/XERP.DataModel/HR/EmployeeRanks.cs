@@ -35,7 +35,7 @@ namespace XERP.DataModel.HR
         public DateTime LastModifiedAt { get; set; }
 
         public int VersionNo { get; set; } = 1;
-    //    [Required]
-    //    public string Status { get; set; }  
-    //}
+        [Required]
+        public string Status { get; set; }
+    }
 }
