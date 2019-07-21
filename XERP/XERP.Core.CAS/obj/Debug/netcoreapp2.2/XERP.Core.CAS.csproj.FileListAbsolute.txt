@@ -1,0 +1,14 @@
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\bin\Debug\netcoreapp2.2\XERP.Core.CAS.deps.json
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\bin\Debug\netcoreapp2.2\XERP.Core.CAS.runtimeconfig.json
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\bin\Debug\netcoreapp2.2\XERP.Core.CAS.runtimeconfig.dev.json
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\bin\Debug\netcoreapp2.2\XERP.Core.CAS.dll
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\bin\Debug\netcoreapp2.2\XERP.Core.CAS.pdb
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.csprojAssemblyReference.cache
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.csproj.CoreCompileInputs.cache
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.RazorAssemblyInfo.cache
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.RazorAssemblyInfo.cs
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.AssemblyInfoInputs.cache
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.AssemblyInfo.cs
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.RazorTargetAssemblyInfo.cache
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.dll
+C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.CAS\obj\Debug\netcoreapp2.2\XERP.Core.CAS.pdb

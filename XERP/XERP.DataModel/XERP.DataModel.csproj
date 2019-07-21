@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <Compile Remove="CONTEXT\**" />
+    <Content Remove="CONTEXT\**" />
+    <EmbeddedResource Remove="CONTEXT\**" />
+    <None Remove="CONTEXT\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CONTEXT\" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
   </ItemGroup>
 
 </Project>

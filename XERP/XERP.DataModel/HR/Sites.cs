@@ -24,7 +24,7 @@ namespace XERP.DataModel.HR
         [Required]
         public DateTime CreatedAt  { get; set; } = DateTime.Now;
         public string LastModifiedById { get; set; }
-        public DateTime LastModifiedAt datetime { get; set; }
+        public DateTime LastModifiedAt { get; set; }
         public int VersionNo { get; set; }
         [Required]
         public string Status { get; set; } 

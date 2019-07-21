@@ -37,5 +37,13 @@ namespace XERP.DataModel.SYSTEM
         public DateTime LastModifiedAt { get; set; }
         public int VersionNo { get; set; }
         public string Status { get; set; }
+
+
+        //Industries
+        public virtual Industries Industries { get; set; }
+
+        //ClientCompanies
+        public virtual ICollection<ClientCompanies> ClientCompanies { get; set; }
+
     }
 }

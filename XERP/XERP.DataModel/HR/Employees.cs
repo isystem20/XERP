@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XERP.DataModel.SYSTEM;
 
 namespace XERP.DataModel.HR
 {
@@ -17,7 +18,7 @@ namespace XERP.DataModel.HR
         public string MiddleName { get; set; }
         public string Suffix { get; set; }
         [Required]
-        public DateTime BirthDate  { get; set; }
+        public DateTime BirthDate { get; set; }
         public string BirthPlace { get; set; }
         [Required]
         public string CivilStatus { get; set; }
@@ -35,5 +36,10 @@ namespace XERP.DataModel.HR
         public int VersionNo { get; set; }
 
         public String Status { get; set; }
+
+
+        //An Employee Can have multiple User Accounts.
+        public virtual ICollection<ApplicationUsers> ApplicationUsers { get; set; }
+
     }
 }
