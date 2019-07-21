@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace XERP.DataModel.PAYROLL
 {
-    public class HourTypes {
-        [Required]
-        public Guid ID { get; set; }
-        [Required]
+    public class CurrencyDetails {
+        public Guid Id { get; set; }
         public string Code { get; set; }
-        [Required]
         public string Name { get; set; }
-        public bool active { get; set; }
+        public string Status { get; set; }
+        public string CompanyBankAccountId { get; set; }
+        public string CurrencyCode { get; set; }
+        public ICollection<Currencies> Currencies { get; set; }
     }
+
 }
