@@ -21,7 +21,7 @@ namespace XERP.DataModel.SYSTEM
         public string CompanyId { get; set; }
 
         [Column(TypeName = "nvarchar(50)")]
-        public string EmployeeId { get; set; }
+        public string? EmployeeId { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
         public string SecurityHash { get; set; }
