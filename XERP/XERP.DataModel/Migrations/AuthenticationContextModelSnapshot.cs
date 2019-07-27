@@ -384,12 +384,12 @@ namespace XERP.DataModel.Migrations
                     b.Property<string>("ClientId")
                         .IsRequired()
                         .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 36)))
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("CompanyId")
                         .IsRequired()
                         .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 36)))
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime>("CreatedAt");
 
@@ -399,7 +399,7 @@ namespace XERP.DataModel.Migrations
                     b.Property<string>("EmployeeId")
                         .IsRequired()
                         .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 36)))
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime>("LastModifiedAt");
 
@@ -412,7 +412,7 @@ namespace XERP.DataModel.Migrations
                     b.Property<string>("Remarks");
 
                     b.Property<string>("SecurityHash")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Status");
 
@@ -421,7 +421,7 @@ namespace XERP.DataModel.Migrations
                     b.Property<bool>("UserChangePasswordNextLogon");
 
                     b.Property<string>("UserCode")
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<int>("VersionNo");
 
@@ -482,7 +482,7 @@ namespace XERP.DataModel.Migrations
             modelBuilder.Entity("XERP.DataModel.SYSTEM.ClientCompanies", b =>
                 {
                     b.HasOne("XERP.DataModel.SYSTEM.Clients", "Clients")
-                        .WithMany("ClientCompanies")
+                        .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

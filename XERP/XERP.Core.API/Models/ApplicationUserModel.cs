@@ -9,8 +9,10 @@ namespace XERP.Core.API.Models
 {
     public class ApplicationUserModel
     {
+        public Guid? Id { get; set; }
+
         [Required]
-        public string UserCode { get; set; } //How to link it to a function generating uniquecode?
+        public string UserCode { get; set; } = "TEMP"; //How to link it to a function generating uniquecode?
 
         [Required]
         public string UserName { get; set; }
@@ -20,11 +22,11 @@ namespace XERP.Core.API.Models
         public string PasswordHash { get; set; }
 
         [Required]
-        public string ClientId { get; set; }
+        public Guid ClientId { get; set; }
         [Required]
-        public string CompanyId { get; set; }
+        public Guid CompanyId { get; set; }
 
-        public string EmployeeId { get; set; }
+        public Guid EmployeeId { get; set; }
         [Required]
         public string SecurityHash { get; set; }
 

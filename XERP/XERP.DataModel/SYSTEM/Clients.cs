@@ -43,7 +43,7 @@ namespace XERP.DataModel.SYSTEM
         public virtual Industries Industries { get; set; }
 
         //ClientCompanies
-        public virtual ICollection<ClientCompanies> ClientCompanies { get; set; }
+        //public virtual ICollection<ClientCompanies> ClientCompanies { get; set; }
 
     }
 }
