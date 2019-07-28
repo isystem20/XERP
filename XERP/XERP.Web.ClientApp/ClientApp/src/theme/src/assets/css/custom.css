@@ -1,0 +1,27 @@
+.w18 {
+	width: 18px;
+}
+.bg-image {
+	background-image: url('../media/photos/photo3@2x.jpg');
+}
+.h360 {
+	height: 360px;
+}
+.w80 {
+	width: 80px;
+}
+.w100 {
+	width: 100px;
+}
+.w60 {
+	width: 60px;
+}
+.w120 {
+	width: 120px;
+}
+.w30p {
+	width: 30%;
+}
+.w15p {
+	width: 15%;
+}

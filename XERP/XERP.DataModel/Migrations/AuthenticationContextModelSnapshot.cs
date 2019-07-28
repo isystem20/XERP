@@ -27,6 +27,9 @@ namespace XERP.DataModel.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
                     b.Property<string>("Name")
                         .HasMaxLength(256);
 
@@ -41,6 +44,8 @@ namespace XERP.DataModel.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityRole");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -189,6 +194,455 @@ namespace XERP.DataModel.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("XERP.DataModel.HR.Certificates", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Certificates");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.CostCenters", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CostCenters");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.Departments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.EmployeeCertifications", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CertificateCustomName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("CertificateId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("IssuedDate")
+                        .IsRequired();
+
+                    b.Property<string>("IssuedInstitution")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<string>("ValidityExpiration")
+                        .IsRequired();
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeCertifications");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.EmployeeDependents", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Birthdate");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CreatedAt")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 48)))
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Relation")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeDependents");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.EmployeeEducationalHistory", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Degree")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("InclusiveDateFrom");
+
+                    b.Property<DateTime>("InclusiveDateTo");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<string>("Program")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<string>("SchoolAddress")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("SchoolName")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeEducationalHistory");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.EmployeePreviousER", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById");
+
+                    b.Property<DateTime>("EndDate");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .IsRequired();
+
+                    b.Property<decimal>("Rate");
+
+                    b.Property<string>("Remarks");
+
+                    b.Property<DateTime>("StartDate");
+
+                    b.Property<int>("YearEnd");
+
+                    b.Property<decimal>("_25GrossTaxableCompensationIncome");
+
+                    b.Property<decimal>("_27PremiumPaid");
+
+                    b.Property<decimal>("_31TotalTaxWithheld");
+
+                    b.Property<decimal>("_3713thMonthPayAndOtherBenefits");
+
+                    b.Property<decimal>("_38DeMinimisBenefits");
+
+                    b.Property<decimal>("_39ContributionsAndUnionDues");
+
+                    b.Property<decimal>("_40SalariesAndCompensation");
+
+                    b.Property<decimal>("_51Taxable13thMonthPayAndOtherBenefits");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeePreviousER");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.EmployeeRanks", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeRanks");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.EmployeeStates", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ChangeType")
+                        .IsRequired();
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CostCenterId")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<string>("DepartmentId")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("EmployeeRankId")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("EmployeeTypeId")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("PositionId")
+                        .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 64)))
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("SiteId")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeStates");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.EmployeeTypes", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<string>("VersionNo")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeTypes");
+                });
+
             modelBuilder.Entity("XERP.DataModel.HR.Employees", b =>
                 {
                     b.Property<Guid>("Id")
@@ -205,6 +659,8 @@ namespace XERP.DataModel.Migrations
 
                     b.Property<string>("CreatedById")
                         .IsRequired();
+
+                    b.Property<Guid?>("EmployeePreviousERId");
 
                     b.Property<string>("FirstName")
                         .IsRequired();
@@ -228,7 +684,493 @@ namespace XERP.DataModel.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmployeePreviousERId");
+
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.Nationalities", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Nationalities");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.Positions", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<string>("VersionNo")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Positions");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.PreviousEmployers", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById");
+
+                    b.Property<Guid?>("EmployeePreviousERId");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById")
+                        .IsRequired();
+
+                    b.Property<string>("RegisteredName")
+                        .IsRequired();
+
+                    b.Property<string>("State");
+
+                    b.Property<string>("TIN");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeePreviousERId");
+
+                    b.ToTable("PreviousEmployers");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.Regions", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Code");
+
+                    b.Property<DateTime>("EffectivityDate");
+
+                    b.Property<float>("MWERate");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Regions");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.HR.Sites", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sites");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.Currencies", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code");
+
+                    b.Property<Guid?>("CurrencyDetailsId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CurrencyDetailsId");
+
+                    b.ToTable("Currencies");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.CurrencyDetails", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("CompanyBankAccountId");
+
+                    b.Property<string>("CurrencyCode");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MyProperty");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.DayTypes", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("ID");
+
+                    b.ToTable("DayTypes");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.EmployeePayrollItems", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("Amount");
+
+                    b.Property<string>("CompanyId");
+
+                    b.Property<string>("ConstantValue");
+
+                    b.Property<string>("CurrencyId");
+
+                    b.Property<string>("CurrencyRate");
+
+                    b.Property<DateTime>("DateEffective");
+
+                    b.Property<string>("EmployeeId");
+
+                    b.Property<string>("PayrollItemId");
+
+                    b.Property<string>("Remarks");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeePayrollItems");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.HourTypes", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<bool>("active");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("HourTypes");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.Loans", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("Amortization");
+
+                    b.Property<decimal>("AmountPaid");
+
+                    b.Property<DateTime>("Applicationdate");
+
+                    b.Property<decimal>("Balance");
+
+                    b.Property<string>("CompanyId");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById");
+
+                    b.Property<DateTime>("DateClosed");
+
+                    b.Property<DateTime>("DateEffective");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("EffectiveMonth");
+
+                    b.Property<string>("EffectivePayrollScheduleId");
+
+                    b.Property<int>("EffectiveYear");
+
+                    b.Property<string>("EmployeeId");
+
+                    b.Property<DateTime>("GrantedDate");
+
+                    b.Property<float>("InterestRate");
+
+                    b.Property<bool>("IsHold");
+
+                    b.Property<bool>("IsOnetimeDeduction");
+
+                    b.Property<DateTime>("LastModificationDate");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<decimal>("LoanAmount");
+
+                    b.Property<DateTime>("MonthlyInterestAmount");
+
+                    b.Property<DateTime>("MonthlyPrincipalAmount");
+
+                    b.Property<int>("NoOfPayments");
+
+                    b.Property<string>("Number");
+
+                    b.Property<decimal>("OtherPayments");
+
+                    b.Property<string>("PayrollItemId");
+
+                    b.Property<string>("PayrollScheduleId");
+
+                    b.Property<decimal>("PenaltyAmount");
+
+                    b.Property<float>("PenalyRate");
+
+                    b.Property<decimal>("PreviousPayments");
+
+                    b.Property<decimal>("Principal");
+
+                    b.Property<string>("RefNo");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Loans");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.ParameterRates", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("DayTypeId")
+                        .IsRequired();
+
+                    b.Property<string>("HourTypeId")
+                        .IsRequired();
+
+                    b.Property<decimal>("Rate");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("ParameterRates");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.Parameters", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Comment");
+
+                    b.Property<string>("CompanyId");
+
+                    b.Property<float>("DaysInYear");
+
+                    b.Property<float>("HoursInDay");
+
+                    b.Property<bool>("IsStandard");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("ParameterRateId");
+
+                    b.Property<string>("PaymentTypeId");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Parameters");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.PayrollItemTypes", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PayrollItemTypes");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.PayrollItems", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("CompanyId");
+
+                    b.Property<string>("DayTypeId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("GroupCode");
+
+                    b.Property<string>("HourTypeId");
+
+                    b.Property<bool>("IncludeIn13thMonthPay");
+
+                    b.Property<bool>("IncludeInHDMF");
+
+                    b.Property<bool>("IncludeInPHIC");
+
+                    b.Property<bool>("IncludeInSSS");
+
+                    b.Property<bool>("IncludeInWTAX");
+
+                    b.Property<bool>("IsLoan");
+
+                    b.Property<bool>("IsStandard");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PayrollItemTypeId");
+
+                    b.Property<string>("SysCode");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("PayrollItems");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.PayrollPeriods", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<int>("AnnualizationOrdering");
+
+                    b.Property<string>("Code");
+
+                    b.Property<bool>("Is13thMonthPay");
+
+                    b.Property<bool>("IsAnnualization");
+
+                    b.Property<bool>("IsFinalPay");
+
+                    b.Property<bool>("IsRegular");
+
+                    b.Property<bool>("IsRetirement");
+
+                    b.Property<bool>("IsStandard");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PayrollPeriods");
                 });
 
             modelBuilder.Entity("XERP.DataModel.SYSTEM.ClientCompanies", b =>
@@ -280,8 +1222,6 @@ namespace XERP.DataModel.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClientId");
-
                     b.ToTable("ClientCompanies");
                 });
 
@@ -317,8 +1257,6 @@ namespace XERP.DataModel.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int?>("IndustriesId");
-
                     b.Property<string>("IndustryType");
 
                     b.Property<DateTime>("LastModifiedAt");
@@ -330,8 +1268,6 @@ namespace XERP.DataModel.Migrations
                     b.Property<int>("VersionNo");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IndustriesId");
 
                     b.ToTable("Clients");
                 });
@@ -375,6 +1311,149 @@ namespace XERP.DataModel.Migrations
                     b.ToTable("Industries");
                 });
 
+            modelBuilder.Entity("XERP.DataModel.SYSTEM.Modules", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("ServiceId")
+                        .IsRequired();
+
+                    b.Property<string>("Status");
+
+                    b.Property<string>("URL")
+                        .IsRequired();
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Modules");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.SYSTEM.Services", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Status");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Services");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.SYSTEM.UserModules", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("AccessHash");
+
+                    b.Property<string>("ClientId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired();
+
+                    b.Property<DateTime>("LastModifiedAt");
+
+                    b.Property<string>("LastModifiedById");
+
+                    b.Property<string>("ModuleId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("ServiceId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Status");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int>("VersionNo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserModules");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.SYSTEM.ApplicationRole", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
+
+                    b.HasDiscriminator().HasValue("ApplicationRole");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "be50b55e-170c-400f-b5ac-afc093f18612",
+                            ConcurrencyStamp = "84cf29a8-9f44-45ed-801e-c195892abc6e",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "3ad8bdbc-63fd-438c-949a-7ad4edd11bcc",
+                            ConcurrencyStamp = "4c6cfc90-7aff-400e-9994-094d4152dec4",
+                            Name = "Member",
+                            NormalizedName = "MEMBER"
+                        },
+                        new
+                        {
+                            Id = "dc2f4ff1-c65d-4195-9b06-fe055e2f4bac",
+                            ConcurrencyStamp = "0eed28d6-c7a0-4ea9-8ce7-6318e839fd83",
+                            Name = "Agent",
+                            NormalizedName = "AGENT"
+                        });
+                });
+
             modelBuilder.Entity("XERP.DataModel.SYSTEM.ApplicationUsers", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
@@ -401,6 +1480,8 @@ namespace XERP.DataModel.Migrations
                         .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 36)))
                         .HasColumnType("varchar(50)");
 
+                    b.Property<Guid?>("EmployeesId");
+
                     b.Property<DateTime>("LastModifiedAt");
 
                     b.Property<string>("LastModifiedById");
@@ -425,11 +1506,7 @@ namespace XERP.DataModel.Migrations
 
                     b.Property<int>("VersionNo");
 
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("CompanyId");
-
-                    b.HasIndex("EmployeeId");
+                    b.HasIndex("EmployeesId");
 
                     b.HasDiscriminator().HasValue("ApplicationUsers");
                 });
@@ -479,37 +1556,32 @@ namespace XERP.DataModel.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("XERP.DataModel.SYSTEM.ClientCompanies", b =>
+            modelBuilder.Entity("XERP.DataModel.HR.Employees", b =>
                 {
-                    b.HasOne("XERP.DataModel.SYSTEM.Clients", "Clients")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("XERP.DataModel.HR.EmployeePreviousER")
+                        .WithMany("Employee")
+                        .HasForeignKey("EmployeePreviousERId");
                 });
 
-            modelBuilder.Entity("XERP.DataModel.SYSTEM.Clients", b =>
+            modelBuilder.Entity("XERP.DataModel.HR.PreviousEmployers", b =>
                 {
-                    b.HasOne("XERP.DataModel.SYSTEM.Industries", "Industries")
-                        .WithMany()
-                        .HasForeignKey("IndustriesId");
+                    b.HasOne("XERP.DataModel.HR.EmployeePreviousER")
+                        .WithMany("PreviousEmployer")
+                        .HasForeignKey("EmployeePreviousERId");
+                });
+
+            modelBuilder.Entity("XERP.DataModel.PAYROLL.Currencies", b =>
+                {
+                    b.HasOne("XERP.DataModel.PAYROLL.CurrencyDetails")
+                        .WithMany("Currencies")
+                        .HasForeignKey("CurrencyDetailsId");
                 });
 
             modelBuilder.Entity("XERP.DataModel.SYSTEM.ApplicationUsers", b =>
                 {
-                    b.HasOne("XERP.DataModel.SYSTEM.Clients", "Clients")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("XERP.DataModel.SYSTEM.ClientCompanies", "ClientCompanies")
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("XERP.DataModel.HR.Employees", "Employees")
+                    b.HasOne("XERP.DataModel.HR.Employees")
                         .WithMany("ApplicationUsers")
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("EmployeesId");
                 });
 #pragma warning restore 612, 618
         }
