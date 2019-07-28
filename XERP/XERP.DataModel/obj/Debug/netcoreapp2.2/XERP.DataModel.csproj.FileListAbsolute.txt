@@ -15,3 +15,17 @@ C:\Users\John Perry\Documents\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\a
 C:\Users\John Perry\Documents\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\appsettings.json
 C:\Users\John Perry\Documents\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
 C:\Users\John Perry\Documents\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.csprojAssemblyReference.cache
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.deps.json
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.runtimeconfig.json
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.runtimeconfig.dev.json
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.dll
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.pdb
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.csproj.CoreCompileInputs.cache
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.RazorAssemblyInfo.cache
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.RazorAssemblyInfo.cs
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.AssemblyInfoInputs.cache
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.AssemblyInfo.cs
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.RazorTargetAssemblyInfo.cache
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.dll
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.pdb
+C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.csprojAssemblyReference.cache

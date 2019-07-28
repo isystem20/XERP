@@ -18,3 +18,20 @@ C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\Pr
 C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.DataModel.dll
 C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.DataModel.pdb
 C:\Users\John Perry\Documents\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.csproj.CopyComplete
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.Core.API.deps.json
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.Core.API.runtimeconfig.json
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.Core.API.runtimeconfig.dev.json
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.Core.API.dll
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.Core.API.pdb
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.DataModel.dll
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\bin\Debug\netcoreapp2.2\XERP.DataModel.pdb
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.csprojAssemblyReference.cache
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.csproj.CoreCompileInputs.cache
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.RazorAssemblyInfo.cache
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.RazorAssemblyInfo.cs
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.AssemblyInfoInputs.cache
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.AssemblyInfo.cs
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.RazorTargetAssemblyInfo.cache
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.csproj.CopyComplete
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.dll
+C:\xampp\testprograms\XERP\XERP\XERP.Core.API\obj\Debug\netcoreapp2.2\XERP.Core.API.pdb
