@@ -16,7 +16,7 @@ export class Layout extends Component {
   render () {
     return (
 
-        <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+        <div id="page-container" className="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
 
             <RightBar />
 

@@ -3,7 +3,7 @@
 export class ModalAppList extends Component {
     render() {
         return (
-            <div className="modal fade" id="one-modal-apps" tabindex="-1" role="dialog" aria-labelledby="one-modal-apps" aria-hidden="true">
+            <div className="modal fade" id="one-modal-apps" tabIndex="-1" role="dialog" aria-labelledby="one-modal-apps" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-top modal-sm" role="document">
                     <div className="modal-content">
                         <div className="block block-themed block-transparent mb-0">

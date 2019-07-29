@@ -16,16 +16,11 @@ export class Departments extends Component {
 
     }
 
-
-
     //Will load after render.
     componentWillMount() {
 
         //Load required style for this page
         LoadStyle(['datatablebs', 'datatablebuttons'], document.head, false);
-
-
-
         this.fetchData();
 
     }
@@ -35,7 +30,6 @@ export class Departments extends Component {
         const scripts = ['datatable', 'datatablebs', 'datatablebuttons', 'datatableprint', 'datatablehtml5', 'datatableflash', 'datatablecolvis','datatablepage']
         LoadScript(scripts, document.body, false);
     }
-
 
     fetchData() {
 
@@ -54,7 +48,6 @@ export class Departments extends Component {
                 });
 
             });
-
 
     }
 
@@ -87,7 +80,7 @@ export class Departments extends Component {
     render() {
 
         let contents = this.state.loading
-            ? <tr><td colSpan="5"><center>Nothing to display</center></td></tr>
+            ? <tr id="-1"><td colSpan="5"><center>Nothing to display</center></td></tr>
             :
             this.renderData(this.state.data);
 

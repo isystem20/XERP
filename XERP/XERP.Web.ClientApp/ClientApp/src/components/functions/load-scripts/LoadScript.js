@@ -19,7 +19,13 @@ const scriptList = {
 
     //notification
     notification: "theme/src/assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js",
-    notificationhelper: "theme/src/assets/js/notif.js"
+    notificationhelper: "theme/src/assets/js/notif.js",
+
+    //signin    
+    validate: "theme/src/assets/js/plugins/jquery-validation/jquery.validate.min.js",        
+    op_auth_signin: "assets/js/pages/op_auth_signin.min.js",     
+    op_auth_reminder: "assets/js/pages/op_auth_reminder.min.js"
+
     //register new
 }
 

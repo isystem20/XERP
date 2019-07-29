@@ -19,3 +19,6 @@
 .w120 {
 	width: 120px;
 }
+.bg-image-signin {
+	background-image: url('assets/media/photos/photo6@2x.jpg');
+}
