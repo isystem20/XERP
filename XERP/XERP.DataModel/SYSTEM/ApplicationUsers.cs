@@ -53,16 +53,22 @@ namespace XERP.DataModel.SYSTEM
 
 
 
-        //User Accounts must have atleast 1 reference Employee
-        [ForeignKey("EmployeeId")]
-        public virtual Employees Employees { get; set; }
+        ////User Accounts must have atleast 1 reference Employee
+        //[ForeignKey("EmployeeId")]
+        //public virtual Employees Employees { get; set; }
 
-        //Client
-        [ForeignKey("ClientId")]
-        public virtual Clients Clients { get; set; }
+        ////Client
+        //[ForeignKey("ClientId")]
+        //public virtual Clients Clients { get; set; }
 
-        //Company
-        [ForeignKey("CompanyId")]
-        public virtual ClientCompanies ClientCompanies { get; set; }
+        ////Company
+        //[ForeignKey("CompanyId")]
+        //public virtual ClientCompanies ClientCompanies { get; set; }
+    }
+
+
+    public class ApplicationRole : IdentityRole
+    {
+
     }
 }

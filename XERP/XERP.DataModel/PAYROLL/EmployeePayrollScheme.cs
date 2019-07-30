@@ -7,4 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace XERP.DataModel.PAYROLL
-{}
+{
+    public class EmployeePayrollScheme
+    {
+
+    }
+}

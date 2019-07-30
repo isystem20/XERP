@@ -1,0 +1,572 @@
+<main id="main-container">
+
+    
+    <div className="bg-body-light">
+        <div className="content content-full">
+            <div className="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                <h1 className="flex-sm-fill h3 my-2">
+                    DataTables <small className="d-block d-sm-inline-block mt-2 mt-sm-0 font-size-base font-w400 text-muted">Tables transformed with dynamic features.</small>
+                </h1>
+                <nav className="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+                    <ol className="breadcrumb breadcrumb-alt">
+                        <li className="breadcrumb-item">Tables</li>
+                        <li className="breadcrumb-item" aria-current="page">
+                            <a className="link-fx" href="">DataTables</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div className="content">
+        
+        <div className="block">
+            <div className="block-header">
+                <h3 className="block-title">Dynamic Table <small>Full pagination</small></h3>
+            </div>
+            <div className="block-content block-content-full">
+                
+                <table className="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
+                    <thead>
+                        <tr>
+                            <th className="text-center w80">ID</th>
+                            <th>Name</th>
+                            <th className="d-none d-sm-table-cell w30p">Email</th>
+                            <th className="d-none d-sm-table-cell w15p">Access</th>
+                            <th className="w15p">Registered</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className="text-center font-size-sm">1</td>
+                            <td className="font-w600 font-size-sm">Susan Day</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client1<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">5 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">2</td>
+                            <td className="font-w600 font-size-sm">Lisa Jenkins</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client2<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">6 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">3</td>
+                            <td className="font-w600 font-size-sm">Carl Wells</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client3<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">2 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">4</td>
+                            <td className="font-w600 font-size-sm">Adam McCoy</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client4<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-danger">Disabled</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">3 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">5</td>
+                            <td className="font-w600 font-size-sm">Susan Day</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client5<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">6</td>
+                            <td className="font-w600 font-size-sm">Alice Moore</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client6<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">6 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">7</td>
+                            <td className="font-w600 font-size-sm">Sara Fields</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client7<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">10 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">8</td>
+                            <td className="font-w600 font-size-sm">Betty Kelley</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client8<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">5 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">9</td>
+                            <td className="font-w600 font-size-sm">Andrea Gardner</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client9<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">4 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">10</td>
+                            <td className="font-w600 font-size-sm">Marie Duncan</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client10<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">11</td>
+                            <td className="font-w600 font-size-sm">Adam McCoy</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client11<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">3 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">12</td>
+                            <td className="font-w600 font-size-sm">Henry Harrison</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client12<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">13</td>
+                            <td className="font-w600 font-size-sm">Danielle Jones</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client13<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">14</td>
+                            <td className="font-w600 font-size-sm">Sara Fields</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client14<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">5 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">15</td>
+                            <td className="font-w600 font-size-sm">Albert Ray</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client15<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">16</td>
+                            <td className="font-w600 font-size-sm">Andrea Gardner</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client16<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-info">Business</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">4 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">17</td>
+                            <td className="font-w600 font-size-sm">Jose Parker</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client17<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-info">Business</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">8 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">18</td>
+                            <td className="font-w600 font-size-sm">Jose Wagner</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client18<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">8 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">19</td>
+                            <td className="font-w600 font-size-sm">Ryan Flores</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client19<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">20</td>
+                            <td className="font-w600 font-size-sm">Susan Day</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client20<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">6 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">21</td>
+                            <td className="font-w600 font-size-sm">Amber Harvey</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client21<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">10 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">22</td>
+                            <td className="font-w600 font-size-sm">Carol Ray</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client22<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">23</td>
+                            <td className="font-w600 font-size-sm">Alice Moore</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client23<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-info">Business</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">4 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">24</td>
+                            <td className="font-w600 font-size-sm">Jose Mills</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client24<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">6 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">25</td>
+                            <td className="font-w600 font-size-sm">Albert Ray</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client25<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">3 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">26</td>
+                            <td className="font-w600 font-size-sm">Andrea Gardner</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client26<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-danger">Disabled</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">5 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">27</td>
+                            <td className="font-w600 font-size-sm">Scott Young</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client27<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">8 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">28</td>
+                            <td className="font-w600 font-size-sm">Marie Duncan</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client28<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">3 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">29</td>
+                            <td className="font-w600 font-size-sm">Amber Harvey</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client29<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">8 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">30</td>
+                            <td className="font-w600 font-size-sm">Albert Ray</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client30<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">31</td>
+                            <td className="font-w600 font-size-sm">David Fuller</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client31<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">8 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">32</td>
+                            <td className="font-w600 font-size-sm">Brian Cruz</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client32<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-info">Business</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">10 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">33</td>
+                            <td className="font-w600 font-size-sm">Lisa Jenkins</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client33<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">2 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">34</td>
+                            <td className="font-w600 font-size-sm">Ryan Flores</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client34<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-warning">Trial</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">3 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">35</td>
+                            <td className="font-w600 font-size-sm">Thomas Riley</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client35<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">7 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">36</td>
+                            <td className="font-w600 font-size-sm">Amanda Powell</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client36<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-primary">Personal</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">9 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">37</td>
+                            <td className="font-w600 font-size-sm">Carl Wells</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client37<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">2 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">38</td>
+                            <td className="font-w600 font-size-sm">Carl Wells</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client38<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-info">Business</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">6 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">39</td>
+                            <td className="font-w600 font-size-sm">Jeffrey Shaw</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client39<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-info">Business</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">6 days ago</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="text-center font-size-sm">40</td>
+                            <td className="font-w600 font-size-sm">Andrea Gardner</td>
+                            <td className="d-none d-sm-table-cell font-size-sm">
+                                client40<em className="text-muted">@example.com</em>
+                            </td>
+                            <td className="d-none d-sm-table-cell">
+                                <span className="badge badge-success">VIP</span>
+                            </td>
+                            <td>
+                                <em className="text-muted font-size-sm">4 days ago</em>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+
+</main>

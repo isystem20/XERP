@@ -43,9 +43,9 @@ namespace XERP.DataModel.SYSTEM
         public string Status { get; set; }
 
 
-        //Clients
-        [ForeignKey("ClientId")]
-        public virtual Clients Clients { get; set; }
+        ////Clients
+        //[ForeignKey("ClientId")]
+        //public virtual Clients Clients { get; set; }
 
 
     }
