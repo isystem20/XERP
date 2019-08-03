@@ -107,7 +107,7 @@ namespace XERP.Core.API.Controllers.System
             var game = await _context.Clients.FindAsync(id);
             _context.Clients.Remove(game);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
 
         private bool RecordExists(Guid id)
