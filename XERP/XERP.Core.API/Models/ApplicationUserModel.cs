@@ -19,16 +19,16 @@ namespace XERP.Core.API.Models
         [Required]
         public string Email { get; set; }
         [Required]
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
 
-        [Required]
-        public Guid ClientId { get; set; }
-        [Required]
-        public Guid CompanyId { get; set; }
+        //[Required]
+        public Guid ClientId { get; set; } = new Guid();
+        //[Required]
+        public Guid CompanyId { get; set; } = new Guid();
 
         public Guid EmployeeId { get; set; }
-        [Required]
-        public string SecurityHash { get; set; }
+        //[Required]
+        public string SecurityHash { get; set; } = "TEMPHASH";
 
         public bool PasswordNeverExpires { get; set; }
 
