@@ -79,11 +79,6 @@ namespace XERP.DataModel
             base.OnModelCreating(builder);
         }
 
-
-        /// <summary>
-        /// Seed User
-        /// </summary>
-        /// <param name="userManager">User Manager</param>
         public static void SeedUser(UserManager<ApplicationUsers> userManager)
         {
             if (userManager.FindByEmailAsync("sysadmin@xerp.com").Result == null)
