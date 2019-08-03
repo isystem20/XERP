@@ -11,8 +11,7 @@ function AxiosRequest(token, method, url, data = null) {
                 localStorage.setItem('token', tokenRefreshResponse.data.token);
                 failedRequest.response.config.headers['Authentication'] = 'Bearer ' + tokenRefreshResponse.data.token;
                 return Promise.resolve();
-            }
-            );
+            });
 
         // Instantiate the interceptor (you can chain it as it returns the axios instance)
         createAuthRefreshInterceptor(axios, refreshAuthLogic);

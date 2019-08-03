@@ -16,7 +16,7 @@ export default class App extends Component {
             <div>
                 <Switch>
 
-                    <Route path='/' component={Signin} />
+                    <Route exact path='/' component={Signin} />
                     <Route exact path='/signin' component={Signin} />
                     <Route exact path='/passwordReminder' component={PasswordReminder} />
 

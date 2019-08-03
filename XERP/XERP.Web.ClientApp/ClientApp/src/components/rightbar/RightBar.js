@@ -188,7 +188,7 @@ export class RightBar extends Component {
                                     </div>
                                     <div className="block-content">
                                         
-                                        <form action="be_pages_dashboard.html" method="POST" onsubmit="return false;">
+                                        <div>
                                             <div className="form-group">
                                                 <p className="font-w600 mb-2">
                                                     Online Status
@@ -232,7 +232,7 @@ export class RightBar extends Component {
                                                     <label className="custom-control-label" for="so-settings-check5">Enable access</label>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
                                         
                                     </div>
                                 </div>

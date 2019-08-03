@@ -58,23 +58,25 @@ export class Departments extends Component {
 
                 <tr key={data.id}>
                     <td className="text-center font-size-sm">{data.id}</td>
-                    <td className="font-w600 font-size-sm">{data.employee_name}</td>
-                    <td className="d-none d-sm-table-cell font-size-sm">
-                    {data.employee_salary}<em className="text-muted">@example.com</em>
+                    <td className="d-none d-sm-table-cell w30">
+                        <div className="word-break">{data.employee_name}</div>
                     </td>
-                    <td className="d-none d-sm-table-cell">
-                    <span className="badge badge-primary">{data.employee_age}</span>
+                    <td className="d-none d-sm-table-cell w30p">
+                        {data.employee_salary}<em className="text-muted">@example.com</em>
                     </td>
-                    <td>
-                    <em className="text-muted font-size-sm">{data.profile_image}</em>
+                    <td className="d-none d-sm-table-cell w15p">
+                        <span className="badge badge-primary">{data.employee_age}</span>
+                    </td>
+                    <td className="w15p">
+                        data.profile_image
                     </td>                    
-                    <td class="text-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Client">
-                                <i class="fa fa-fw fa-pencil-alt"></i>
+                    <td className="text-center w100">
+                        <div className="btn-group">
+                            <button type="button" className="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Client">
+                                <i className="fa fa-fw fa-pencil-alt"></i>
                             </button>
-                            <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip" title="Remove Client">
-                                <i class="fa fa-fw fa-times"></i>
+                            <button type="button" className="btn btn-sm btn-light" data-toggle="tooltip" title="Remove Client">
+                                <i className="fa fa-fw fa-times"></i>
                             </button>
                         </div>
                     </td>
@@ -88,9 +90,16 @@ export class Departments extends Component {
 
 
     render() {
-
+        //        <tr id="-1"><td colSpan="6"><center>Nothing to display</center></td></tr>
         let contents = this.state.loading
-            ? <tr id="-1"><td colSpan="5"><center>Nothing to display</center></td></tr>
+            ?   <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             :
             this.renderData(this.state.data);
 
@@ -123,10 +132,9 @@ export class Departments extends Component {
 
                     <div className="block">
                         <div className="block-header">
-                            <h3 className="block-title">Dynamic Table <small>Full pagination</small></h3>
+                            <h3 className="block-title">List of Departments</h3>
                         </div>
                         <div className="block-content block-content-full">
-
                             <table className="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
                                 <thead>
                                     <tr>
@@ -135,7 +143,7 @@ export class Departments extends Component {
                                         <th className="d-none d-sm-table-cell w30p">Description</th>
                                         <th className="d-none d-sm-table-cell w15p">Last Modified</th>
                                         <th className="w15p">Status</th>
-                                        <th class="text-center" style="width: 100px;">Actions</th>
+                                        <th className="text-center w100">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>

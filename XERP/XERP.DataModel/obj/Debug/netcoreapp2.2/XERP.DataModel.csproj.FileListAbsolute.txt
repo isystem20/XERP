@@ -29,3 +29,17 @@ C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.Data
 C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.dll
 C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.pdb
 C:\xampp\testprograms\XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.csprojAssemblyReference.cache
+D:\A_XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.deps.json
+D:\A_XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.runtimeconfig.json
+D:\A_XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.runtimeconfig.dev.json
+D:\A_XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.dll
+D:\A_XERP\XERP\XERP.DataModel\bin\Debug\netcoreapp2.2\XERP.DataModel.pdb
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.csprojAssemblyReference.cache
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.csproj.CoreCompileInputs.cache
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.RazorAssemblyInfo.cache
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.RazorAssemblyInfo.cs
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.AssemblyInfoInputs.cache
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.AssemblyInfo.cs
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.RazorTargetAssemblyInfo.cache
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.dll
+D:\A_XERP\XERP\XERP.DataModel\obj\Debug\netcoreapp2.2\XERP.DataModel.pdb

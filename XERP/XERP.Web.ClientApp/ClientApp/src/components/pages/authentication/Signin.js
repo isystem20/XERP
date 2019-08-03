@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LoadScript from '../../functions/load-scripts/LoadScript';
 import { Link } from 'react-router-dom';
 import AxiosRequest from '../../functions/axios/AxiosRequest';
+import axios from 'axios';
 
 export class Signin extends Component {
     constructor(props) {
@@ -13,7 +14,9 @@ export class Signin extends Component {
             password : "",
             remember : false,
         
-            validationErrorDesc : "",   
+            response: null,
+            success: false,
+            result: "",  
             validating : false
         }
 
@@ -36,7 +39,7 @@ export class Signin extends Component {
 
         // Disable controls to prevent spammers
         this.setState({  
-            validationErrorDesc : "",
+            response : null,
             validating : true 
         });  
 
@@ -46,53 +49,54 @@ export class Signin extends Component {
         // Prepare postData
         const { username, password } = this.state
         let postData = {
-            email: username,        // Change email key in future 
+            username: username,        // Change email key in future 
             password: password
         }
-        // Valid credential for test API email: "eve.holt@reqres.in", password: "cityslicka"
-        let axios = AxiosRequest('post', 'https://reqres.in/api/login', postData);
-        axios.then(function (response) {
-            // console.log(response);
-            component.setState({ 
-                response : response,
-                validating : false
-            });   
-            component.handleLoginData();
+        // axios('post', 'http://localhost:5000/api/auth/login', postData)
+        axios({ method: 'post', url: 'http://localhost:5000/api/auth/login', data: postData })
+        .then(function (response) {
+            //console.log(response);
+            component.handleLoginData(response);
         })
         .catch(function (error) {
-            // console.log(error);
-            component.setState({ 
-                validating : false,
-                validationErrorDesc:"Cannot be validated. Please try again." 
-             });  
+            //console.log(error.response);
+            component.handleLoginData(error.response);
         });
 
     }
 
-    handleLoginData() {
-        let response = this.state.response;
-        if (response != null && response.status == 200) {
-            let data = { success:true, result:"message" };  // test data
-            // let data = response.data;
-            if (data != null) {
-                if (data.success) {
-                    localStorage.setItem('token', data.token);
-                    this.props.history.push('/dashboard');
-                } else {
-                    this.setState({ validationErrorDesc:data.result });
-                }
-                // console.log('Done handling reponse.data');
-                console.log(this.state);
+    handleLoginData(response) {
+        if (response != null) {
+            let data = response.data;
+            if (response.status == 200 && data.success) {
+                this.setState({ success: data.success, result: data.result });
+                this.props.history.push('/dashboard');
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('username', this.state.username);
+                localStorage.setItem('password', this.state.password);
+            } else if (response.status == 401 && !data.success) {
+                this.setState({ success: data.success, result: data.result });
             } else {
-                console.log('reponse.data is empty');
-                this.setState({  validationErrorDesc:"Cannot be validated. Please try again." });
+                this.setState({ success: false, result: "Cannot be validated. Please try again." });
             }
         } else {
-            console.log('reponse.status is not 200');
-            this.setState({  validationErrorDesc:"Cannot be validated. Please try again." });
+            this.setState({ success: false, result: "Cannot be validated. Please try again." });
         }
-               
-        this.setState({ validating : false });  
+        this.setState({ validating: false, response: response });    
+    }
+
+    resultInfo() {
+        let result = this.state.result;
+        let success = this.state.success;
+        return (
+            <div className={(success ? "alert alert-success" : "alert alert-warning") + " d-flex align-items-center justify-content-between"} role="alert">
+                <div className="flex-fill mr-3">
+                    <p className="mb-0">{result}</p>
+                </div>
+                <div className="flex-00-auto">
+                    <i className={(success ? "fa fa-fw fa-check" : "fa fa-fw fa-exclamation-circle")}></i>
+                </div>
+            </div>);
     }
 
     render() {
@@ -103,18 +107,8 @@ export class Signin extends Component {
                                     <span className="sr-only">Loading...</span>
                                 </div>
                             </div>;
-        let validationErrorDesc = this.state.validationErrorDesc == ""
-                        ?   ""
-            :               <div className="alert alert-warning d-flex align-items-center justify-content-between" role="alert">
-                                <div className="flex-fill mr-3">
-                                    <p className="mb-0">{this.state.validationErrorDesc}</p>
-                                </div>
-                                <div className="flex-00-auto">
-                                    <i className="fa fa-fw fa-exclamation-circle"></i>
-                                </div>
-                            </div> 
-
-        
+        let result = this.state.response == null ? "" : this.resultInfo()
+                
         return (
             <main id="main-container">
                 <div className="bg-image bg-image-signin">
@@ -131,42 +125,30 @@ export class Signin extends Component {
                                         </div>
                                         <div className="block-content">
                                             <div className="p-sm-3 px-lg-4 py-lg-5">
-                                                <h1 className="mb-2">{"{ Company name here!!! }"}</h1>
-                                                <p>Welcome, please login.</p>
+                                                <center><h1 className="mb-2">{"Sign in"}</h1></center>
+                                                <center><p>to continue to XERP</p></center>
                                                 <div>
-                                                    <div className="py-3">
+                                                    <div className="py-3">   
                                                         <div className="form-group">
                                                             <input 
                                                                 onChange={e => this.handleOnChange(e)}
-                                                                type="text" 
+                                                                type="text"
                                                                 className="form-control"
                                                                 name="username" 
-                                                                placeholder="Username"          
-                                                                autoComplete="off"                              
+                                                                placeholder="Username"                          
                                                                 disabled={this.state.validating}/>     
                                                         </div>
                                                         <div className="form-group">
                                                             <input 
                                                                 onChange={e => this.handleOnChange(e)}
-                                                                type="password" 
+                                                                type="password"
                                                                 className="form-control"
                                                                 name="password" 
-                                                                placeholder="Password"                                                  
+                                                                placeholder="Password"                                         
                                                                 disabled={this.state.validating}/>   
                                                         </div>
-                                                        <div className="form-group">
-                                                            <div className="custom-control custom-checkbox">
-                                                                <input 
-                                                                    onChange={e => this.handleOnChange(e)}
-                                                                    type="checkbox" 
-                                                                    className="custom-control-input" 
-                                                                    name="remember"
-                                                                    disabled={this.state.validating}/>
-                                                                <label className="custom-control-label font-w400" for="login-remember">Remember Me</label>
-                                                            </div>
-                                                        </div>
                                                     </div>  
-                                                    { validationErrorDesc }
+                                                    { result }
                                                     <div className="form-group row"> 
                                                         <div className="col-md-6 col-xl-5">
                                                             <button 
