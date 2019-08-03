@@ -1,0 +1,5 @@
+200     - Success.
+-101    - Unknown username.
+-102    - The password you've entered is incorrect.
+-103    - Account is locked.
+-104    - UserName or Email not found.

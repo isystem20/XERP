@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import LoadScript from '../../functions/load-scripts/LoadScript';
 import { Link } from 'react-router-dom';
+import AxiosRequest from '../../functions/axios/AxiosRequest';
 
 export class Signin extends Component {
     constructor(props) {
@@ -13,9 +13,7 @@ export class Signin extends Component {
             password : "",
             remember : false,
         
-            nameStateDesc : "",
-            passwordStateDesc : "",    
-
+            validationErrorDesc : "",   
             validating : false
         }
 
@@ -28,8 +26,8 @@ export class Signin extends Component {
     }
 
     handleOnChange = (e) => {
+        //console.log(this.state)
         this.setState({ [e.target.name]: e.target.value });
-        console.log(this.state)
     }
 
     handleSubmit = (e) => {
@@ -37,9 +35,8 @@ export class Signin extends Component {
         e.preventDefault();
 
         // Disable controls to prevent spammers
-        this.setState({ 
-            nameStateDesc : "",
-            passwordStateDesc : "",    
+        this.setState({  
+            validationErrorDesc : "",
             validating : true 
         });  
 
@@ -53,27 +50,9 @@ export class Signin extends Component {
             password: password
         }
         // Valid credential for test API email: "eve.holt@reqres.in", password: "cityslicka"
-
-        // TODO : API to check the ff
-        // - username exists in company; return 101 if not exists
-        // - username and password is correct; return 102 if password is incorrect
-        // - user is not currently locked due to ff; return 103 if locked
-        //      - failed login attempts
-        // - return 200 if credential is valid
-        // ------------------------
-        // POST KEYS
-        //      username, password
-        // RESPONSE KEYS
-        //      responseCode, responseMessage, token??
-        // ------------------------
-        // as of 20190729 by rmo
-        axios({
-            method: 'post',
-            url: 'https://reqres.in/api/login',
-            data: postData
-        })
-        .then(function (response) {
-            console.log(response);
+        let axios = AxiosRequest('post', 'https://reqres.in/api/login', postData);
+        axios.then(function (response) {
+            // console.log(response);
             component.setState({ 
                 response : response,
                 validating : false
@@ -81,59 +60,68 @@ export class Signin extends Component {
             component.handleLoginData();
         })
         .catch(function (error) {
-            console.log(error);
-            component.setState({ validating : false });  
+            // console.log(error);
+            component.setState({ 
+                validating : false,
+                validationErrorDesc:"Cannot be validated. Please try again." 
+             });  
         });
 
     }
 
     handleLoginData() {
         let response = this.state.response;
-
         if (response != null && response.status == 200) {
-            // Debug data 
-            // let data = { responseCode:101, responseMessage:"Unknown username." };
-            // let data = { responseCode:102, responseMessage:"The password you've entered is incorrect." };
-            // let data = { responseCode:103, responseMessage:"Account is locked." };
-            let data = { responseCode:200, responseMessage:"OK" };
-            // Actual data
+            let data = { success:true, result:"message" };  // test data
             // let data = response.data;
             if (data != null) {
-                let responseCode = data.responseCode;
-                let responseMessage = data.responseMessage;
-                if (responseCode == 101) {
-                    // responseCode == 101 is "Unknown username."
-                    this.setState({ nameStateDesc:responseMessage });
-                } else if (responseCode == 102) {
-                    // responseCode == 102 is "The password you've entered is incorrect."
-                    this.setState({ passwordStateDesc:responseMessage });
-                } else if (responseCode == 103) {
-                    // responseCode == 103 is "Account is locked."
-                    this.setState({ nameStateDesc:responseMessage });
-                } else if (responseCode == 200) {
-                    this.props.history.push('/dashboard')
+                if (data.success) {
+                    localStorage.setItem('token', data.token);
+                    this.props.history.push('/dashboard');
+                } else {
+                    this.setState({ validationErrorDesc:data.result });
                 }
                 // console.log('Done handling reponse.data');
-                // console.log(this.state);
+                console.log(this.state);
             } else {
-                // console.log('reponse.data is empty');
+                console.log('reponse.data is empty');
+                this.setState({  validationErrorDesc:"Cannot be validated. Please try again." });
             }
         } else {
-            // console.log('reponse.status is not 200');
+            console.log('reponse.status is not 200');
+            this.setState({  validationErrorDesc:"Cannot be validated. Please try again." });
         }
                
         this.setState({ validating : false });  
     }
 
     render() {
+        let spinner =   !this.state.validating 
+                        ?   ""
+                        :   <div className="col-md-6 col-xl-5" >
+                                <div className="spinner-border text-primary" role="status">
+                                    <span className="sr-only">Loading...</span>
+                                </div>
+                            </div>;
+        let validationErrorDesc = this.state.validationErrorDesc == ""
+                        ?   ""
+            :               <div className="alert alert-warning d-flex align-items-center justify-content-between" role="alert">
+                                <div className="flex-fill mr-3">
+                                    <p className="mb-0">{this.state.validationErrorDesc}</p>
+                                </div>
+                                <div className="flex-00-auto">
+                                    <i className="fa fa-fw fa-exclamation-circle"></i>
+                                </div>
+                            </div> 
+
+        
         return (
             <main id="main-container">
                 <div className="bg-image bg-image-signin">
                     <div className="hero-static bg-white-95">
                         <div className="content">
                             <div className="row justify-content-center">
-                                <div className="col-md-8 col-lg-6 col-xl-4">
-                                    
+                                <div className="col-md-8 col-lg-6 col-xl-4">                                    
                                     <div className="block block-themed block-fx-shadow mb-0">
                                         <div className="block-header">
                                             <h3 className="block-title">Sign In</h3>
@@ -151,24 +139,20 @@ export class Signin extends Component {
                                                             <input 
                                                                 onChange={e => this.handleOnChange(e)}
                                                                 type="text" 
-                                                                class={this.state.nameStateDesc === "" ? "form-control":"form-control form-control-alt is-invalid"} 
+                                                                className="form-control"
                                                                 name="username" 
                                                                 placeholder="Username"          
-                                                                autocomplete="off"                              
-                                                                disabled={this.state.validating}/>    
-                                                            <div class="invalid-feedback">{this.state.nameStateDesc}</div>                                                     
-                                                            
+                                                                autoComplete="off"                              
+                                                                disabled={this.state.validating}/>     
                                                         </div>
                                                         <div className="form-group">
                                                             <input 
                                                                 onChange={e => this.handleOnChange(e)}
-                                                                type="text" 
-                                                                class={this.state.passwordStateDesc === "" ? "form-control":"form-control form-control-alt is-invalid"} 
+                                                                type="password" 
+                                                                className="form-control"
                                                                 name="password" 
                                                                 placeholder="Password"                                                  
                                                                 disabled={this.state.validating}/>   
-                                                            <div class="invalid-feedback">{this.state.passwordStateDesc}</div>                                                           
-                                                            
                                                         </div>
                                                         <div className="form-group">
                                                             <div className="custom-control custom-checkbox">
@@ -181,8 +165,9 @@ export class Signin extends Component {
                                                                 <label className="custom-control-label font-w400" for="login-remember">Remember Me</label>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="form-group row">
+                                                    </div>  
+                                                    { validationErrorDesc }
+                                                    <div className="form-group row"> 
                                                         <div className="col-md-6 col-xl-5">
                                                             <button 
                                                                 onClick={e => this.handleSubmit(e)}
@@ -190,15 +175,14 @@ export class Signin extends Component {
                                                                 className="btn btn-block btn-primary"
                                                                 disabled={this.state.validating}>
                                                                 <i className="fa fa-fw fa-sign-in-alt mr-1"></i> Sign In
-                                                            </button>
+                                                            </button>      
                                                         </div>
+                                                        { spinner }                                                        
                                                     </div>
-                                                </div>
-                                                
+                                                </div>                                                
                                             </div>
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>

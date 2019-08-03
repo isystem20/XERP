@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj": {}
+    "D:\\A_XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj": {
+    "D:\\A_XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj",
+        "projectUniqueName": "D:\\A_XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj",
         "projectName": "XERP.Core.API",
-        "projectPath": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj",
-        "packagesPath": "C:\\Users\\John Perry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Core.API\\obj\\",
+        "projectPath": "D:\\A_XERP\\XERP\\XERP.Core.API\\XERP.Core.API.csproj",
+        "packagesPath": "C:\\Users\\torou\\.nuget\\packages\\",
+        "outputPath": "D:\\A_XERP\\XERP\\XERP.Core.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\John Perry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\torou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj": {
-                "projectPath": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj"
+              "D:\\A_XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj": {
+                "projectPath": "D:\\A_XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj"
               }
             }
           }
@@ -68,32 +68,27 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
           "warn": true
         }
       }
     },
-    "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj": {
+    "D:\\A_XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj",
+        "projectUniqueName": "D:\\A_XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj",
         "projectName": "XERP.DataModel",
-        "projectPath": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj",
-        "packagesPath": "C:\\Users\\John Perry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.DataModel\\obj\\",
+        "projectPath": "D:\\A_XERP\\XERP\\XERP.DataModel\\XERP.DataModel.csproj",
+        "packagesPath": "C:\\Users\\torou\\.nuget\\packages\\",
+        "outputPath": "D:\\A_XERP\\XERP\\XERP.DataModel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\John Perry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\torou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -140,12 +135,7 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
           "warn": true

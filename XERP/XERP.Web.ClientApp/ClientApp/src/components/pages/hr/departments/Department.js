@@ -67,6 +67,16 @@ export class Departments extends Component {
                     </td>
                     <td>
                     <em className="text-muted font-size-sm">{data.profile_image}</em>
+                    </td>                    
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Client">
+                                <i class="fa fa-fw fa-pencil-alt"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip" title="Remove Client">
+                                <i class="fa fa-fw fa-times"></i>
+                            </button>
+                        </div>
                     </td>
                 </tr>
 
@@ -125,6 +135,7 @@ export class Departments extends Component {
                                         <th className="d-none d-sm-table-cell w30p">Description</th>
                                         <th className="d-none d-sm-table-cell w15p">Last Modified</th>
                                         <th className="w15p">Status</th>
+                                        <th class="text-center" style="width: 100px;">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>

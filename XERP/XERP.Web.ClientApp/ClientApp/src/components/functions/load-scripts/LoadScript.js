@@ -23,8 +23,8 @@ const scriptList = {
 
     //signin    
     validate: "theme/src/assets/js/plugins/jquery-validation/jquery.validate.min.js",        
-    op_auth_signin: "assets/js/pages/op_auth_signin.min.js",     
-    op_auth_reminder: "assets/js/pages/op_auth_reminder.min.js"
+    op_auth_signin: "theme/src/assets/js/pages/op_auth_signin.min.js",     
+    op_auth_reminder: "theme/src/assets/js/pages/op_auth_reminder.min.js"
 
     //register new
 }

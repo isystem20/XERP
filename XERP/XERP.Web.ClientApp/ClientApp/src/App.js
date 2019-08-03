@@ -16,12 +16,12 @@ export default class App extends Component {
             <div>
                 <Switch>
 
-                    <Route path='/signin' component={Signin} />
-                    <Route path='/passwordReminder' component={PasswordReminder} />
+                    <Route path='/' component={Signin} />
+                    <Route exact path='/signin' component={Signin} />
+                    <Route exact path='/passwordReminder' component={PasswordReminder} />
 
                     <Layout>
-                        <Route path='/dashboard' component={Dashboard} />
-                        <Route exact path='/' component={Dashboard} />
+                        <Route exact path='/dashboard' component={Dashboard} />
                         <Route exact path='/departments' component={Departments} />
                         <Route exact path='/department/:id' component={DepartmentSingle} />
                     </Layout>

@@ -22,3 +22,9 @@
 .bg-image-signin {
 	background-image: url('assets/media/photos/photo6@2x.jpg');
 }
+.visible {
+	visibility: visible;
+}
+.invisible {
+	visibility: hidden;
+}
