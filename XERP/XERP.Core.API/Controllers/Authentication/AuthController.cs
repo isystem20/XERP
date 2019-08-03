@@ -92,7 +92,7 @@ namespace XERP.Core.API.Controllers.Authentication
 
         [HttpPost]
         [Route("login")]
-        public async Task<Object> LoginUserAsync(LoginModel model)
+        public async Task<Object> LoginUserAsync([FromBody]LoginModel model)
         {
             var user = await _userManager.FindByNameAsync(model.UserName);
 
@@ -100,16 +100,21 @@ namespace XERP.Core.API.Controllers.Authentication
             {
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    Subject = new ClaimsIdentity( new Claim[] 
+                    Subject = new ClaimsIdentity(new Claim[]
                     {
                         new Claim("UserId", user.Id.ToString())
                     }),
                     Expires = DateTime.UtcNow.AddMinutes(5),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key)),
-                }
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("H0qvrPrOsGjdJNMHrdwF")), SecurityAlgorithms.HmacSha256Signature),
+                };
+
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                var token = tokenHandler.WriteToken(securityToken);
+                return Ok(new ResultResponse { success = true, result = token });
             }
             else
-                return StatusCode(401, new ObjectResponse { success = false, result = "Invalid Password" });
+                return StatusCode(401, new ResultResponse { success = false, result = "Invalid Password" });
         }
         
     }
