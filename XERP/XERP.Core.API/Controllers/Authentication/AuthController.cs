@@ -28,7 +28,7 @@ namespace XERP.Core.API.Controllers.Authentication
             _signInManager = signInManager;
         }
 
-        [HttpPost("token")]
+        [HttpGet("token")]
         public ActionResult GetToken()
         {
 
@@ -61,11 +61,32 @@ namespace XERP.Core.API.Controllers.Authentication
             {
                 UserName = model.UserName,
                 Email = model.Email,
-                ClientId = model.ClientId,
-                CompanyId = model.CompanyId,
-                EmployeeId = model.EmployeeId,
+                //ClientId = model.ClientId,
+                //CompanyId = model.CompanyId,
+                //EmployeeId = model.EmployeeId,
                 SecurityHash = model.SecurityHash,
+            };
 
+
+            try
+            {
+                var result = await _userManager.CreateAsync(applicationUser, model.Password);
+                return Ok(result);
+
+                //Test this using Postman
+                //{
+                //"UserName" : "cardodalisay",
+                //"Email": "cardodalisay@gmail.com",
+                //"Password": "pass123",
+                //"FullName" : "Ricardo Dalisay"
+                //}
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
