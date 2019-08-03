@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -81,7 +82,6 @@ namespace XERP.Core.API.Controllers.Authentication
                 //"FullName" : "Ricardo Dalisay"
                 //}
 
-
             }
             catch (Exception)
             {
@@ -90,7 +90,27 @@ namespace XERP.Core.API.Controllers.Authentication
             }
         }
 
+        [HttpPost]
+        [Route("login")]
+        public async Task<Object> LoginUserAsync(LoginModel model)
+        {
+            var user = await _userManager.FindByNameAsync(model.UserName);
 
-
+            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+            {
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity( new Claim[] 
+                    {
+                        new Claim("UserId", user.Id.ToString())
+                    }),
+                    Expires = DateTime.UtcNow.AddMinutes(5),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key)),
+                }
+            }
+            else
+                return StatusCode(401, new ObjectResponse { success = false, result = "Invalid Password" });
+        }
+        
     }
 }
