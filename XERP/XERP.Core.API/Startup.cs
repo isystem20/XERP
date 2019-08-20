@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Swagger;
+using XERP.Core.API.Options;
 using XERP.DataModel;
 using XERP.DataModel.SYSTEM;
 
@@ -77,6 +79,12 @@ namespace XERP.Core.API
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerGen(x => {
+                x.SwaggerDoc("v1", new Info{ Title = "ClientAPI?", Version = "v1"});
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -105,6 +113,17 @@ namespace XERP.Core.API
 
             //Create Default User
             AuthenticationContext.SeedUser(userManager);
+
+
+            //Use Swagger
+            var swaggerOptions = new SwaggerOption();
+            configuration.GetSection(nameof(SwaggerOption)).Bind(swaggerOptions);
+
+            app.UseSwagger(option => { option.RouteTemplate = swaggerOptions.JsonRoute; });
+
+            app.UseSwaggerUI(option => {
+                option.SwaggerEndpoint(swaggerOptions.UiEndpoint, swaggerOptions.Description);
+            });
 
 
         }

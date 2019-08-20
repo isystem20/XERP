@@ -35,7 +35,7 @@ namespace XERP.Core.API.Controllers.System
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<IActionResult> GetRecordAsync(Guid? id)
+        public async Task<IActionResult> GetRecordAsync(string id)
         {
             if (id == null)
             {
@@ -55,11 +55,11 @@ namespace XERP.Core.API.Controllers.System
         [HttpPost]
         [Route("add")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateAsync(ClientModel model)
+        public async Task<IActionResult> CreateAsync(Clients model)
         {
             if (ModelState.IsValid)
             {
-                model.Id = Guid.NewGuid();
+                model.Id = Guid.NewGuid().ToString();
                 _context.Add(model);
                 await _context.SaveChangesAsync();
                 return Ok();
@@ -69,7 +69,7 @@ namespace XERP.Core.API.Controllers.System
 
         [HttpPut]
         [Route("edit")]
-        public async Task<IActionResult> EditAsync(Guid id, ClientModel model)
+        public async Task<IActionResult> EditAsync(string id, Clients model)
         {
             if (id != model.Id)
             {
@@ -102,7 +102,7 @@ namespace XERP.Core.API.Controllers.System
 
         [HttpDelete, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteAsync(Guid id)
+        public async Task<IActionResult> DeleteAsync(string id)
         {
             var game = await _context.Clients.FindAsync(id);
             _context.Clients.Remove(game);
@@ -110,7 +110,7 @@ namespace XERP.Core.API.Controllers.System
             return Ok();
         }
 
-        private bool RecordExists(Guid id)
+        private bool RecordExists(string id)
         {
             return _context.Clients.Any(e => e.Id == id);
         }
