@@ -42,5 +42,6 @@ namespace XERP.Core.API.Models
 
         public string Remarks { get; set; }
 
+
     }
 }

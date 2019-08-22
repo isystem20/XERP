@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -72,16 +73,6 @@ namespace XERP.Core.API.Controllers.Authentication
             {
                 var result = await _userManager.CreateAsync(applicationUser, model.Password);
                 return Ok(result);
-
-                //Test this using Postman
-                //{
-                //"UserName" : "cardodalisay",
-                //"Email": "cardodalisay@gmail.com",
-                //"Password": "pass123",
-                //"FullName" : "Ricardo Dalisay"
-                //}
-
-
             }
             catch (Exception)
             {
@@ -90,7 +81,41 @@ namespace XERP.Core.API.Controllers.Authentication
             }
         }
 
+        [HttpPost]
+        [Route("login")]
+        public async Task<Object> LoginUserAsync([FromBody]LoginModel model)
+        {
+            var user = await _userManager.FindByNameAsync(model.UserName);
 
+            if (user != null)
+            {
 
+                if (await _userManager.CheckPasswordAsync(user, model.Password))
+                {
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new ClaimsIdentity(new Claim[]
+                        {
+                            new Claim("UserId", user.Id.ToString())
+                        }),
+                        Expires = DateTime.UtcNow.AddMinutes(5),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("H0qvrPrOsGjdJNMHrdwF")), SecurityAlgorithms.HmacSha256Signature),
+                    };
+
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                    var token = tokenHandler.WriteToken(securityToken);
+                    return Ok(new ResultResponse { success = true, result = token });
+                }
+                else
+                {
+                    return StatusCode(401, new ResultResponse { success  = false, result = "Invalid Username/Password" } );
+                }
+
+            }
+            else
+                return StatusCode(401, new ResultResponse { success = false, result = "Account Not Found." });
+        }
+        
     }
 }

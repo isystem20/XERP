@@ -10,8 +10,8 @@ using XERP.DataModel;
 namespace XERP.DataModel.Migrations
 {
     [DbContext(typeof(AuthenticationContext))]
-    [Migration("20190728071132_Linked Entity framework with the additional contexts and entities")]
-    partial class LinkedEntityframeworkwiththeadditionalcontextsandentities
+    [Migration("20190803113206_test migrate")]
+    partial class testmigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1229,7 +1229,7 @@ namespace XERP.DataModel.Migrations
 
             modelBuilder.Entity("XERP.DataModel.SYSTEM.Clients", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Code")
@@ -1435,22 +1435,22 @@ namespace XERP.DataModel.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "be50b55e-170c-400f-b5ac-afc093f18612",
-                            ConcurrencyStamp = "84cf29a8-9f44-45ed-801e-c195892abc6e",
+                            Id = "e592941d-a03e-4d04-a896-ab2d4715abae",
+                            ConcurrencyStamp = "6a84f64a-352a-49d3-9a89-f2aa8bbb4fc3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "3ad8bdbc-63fd-438c-949a-7ad4edd11bcc",
-                            ConcurrencyStamp = "4c6cfc90-7aff-400e-9994-094d4152dec4",
+                            Id = "21845b0f-ddc8-4079-94a4-236737468c30",
+                            ConcurrencyStamp = "c3d752fe-0870-416d-babb-90e3955c4e89",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
-                            Id = "dc2f4ff1-c65d-4195-9b06-fe055e2f4bac",
-                            ConcurrencyStamp = "0eed28d6-c7a0-4ea9-8ce7-6318e839fd83",
+                            Id = "ddb62183-b479-44c8-897f-6ec32a0b7888",
+                            ConcurrencyStamp = "c4edcfd2-f350-4792-b4e0-4c6f6163a696",
                             Name = "Agent",
                             NormalizedName = "AGENT"
                         });

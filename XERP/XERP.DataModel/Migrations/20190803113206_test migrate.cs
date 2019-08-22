@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace XERP.DataModel.Migrations
 {
-    public partial class LinkedEntityframeworkwiththeadditionalcontextsandentities : Migration
+    public partial class testmigrate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -72,7 +72,7 @@ namespace XERP.DataModel.Migrations
                 name: "Clients",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    Id = table.Column<string>(nullable: false),
                     Code = table.Column<string>(type: "varchar(50)", nullable: false),
                     CompanyName = table.Column<string>(type: "varchar(100)", nullable: false),
                     CompanyAddress = table.Column<string>(type: "varchar(500)", nullable: false),
@@ -910,17 +910,17 @@ namespace XERP.DataModel.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Discriminator", "Name", "NormalizedName" },
-                values: new object[] { "be50b55e-170c-400f-b5ac-afc093f18612", "84cf29a8-9f44-45ed-801e-c195892abc6e", "ApplicationRole", "Admin", "ADMIN" });
+                values: new object[] { "e592941d-a03e-4d04-a896-ab2d4715abae", "6a84f64a-352a-49d3-9a89-f2aa8bbb4fc3", "ApplicationRole", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Discriminator", "Name", "NormalizedName" },
-                values: new object[] { "3ad8bdbc-63fd-438c-949a-7ad4edd11bcc", "4c6cfc90-7aff-400e-9994-094d4152dec4", "ApplicationRole", "Member", "MEMBER" });
+                values: new object[] { "21845b0f-ddc8-4079-94a4-236737468c30", "c3d752fe-0870-416d-babb-90e3955c4e89", "ApplicationRole", "Member", "MEMBER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Discriminator", "Name", "NormalizedName" },
-                values: new object[] { "dc2f4ff1-c65d-4195-9b06-fe055e2f4bac", "0eed28d6-c7a0-4ea9-8ce7-6318e839fd83", "ApplicationRole", "Agent", "AGENT" });
+                values: new object[] { "ddb62183-b479-44c8-897f-6ec32a0b7888", "c4edcfd2-f350-4792-b4e0-4c6f6163a696", "ApplicationRole", "Agent", "AGENT" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
