@@ -12,7 +12,7 @@ namespace XERP.Domain.Entities.HumanResource
         {
             Employees = new HashSet<Employee>();
         }
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

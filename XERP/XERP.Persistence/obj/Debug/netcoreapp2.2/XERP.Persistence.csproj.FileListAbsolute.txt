@@ -1,0 +1,4 @@
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.csprojAssemblyReference.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.AssemblyInfoInputs.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.AssemblyInfo.cs

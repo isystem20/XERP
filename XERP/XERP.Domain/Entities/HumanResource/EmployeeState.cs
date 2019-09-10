@@ -10,7 +10,7 @@ namespace XERP.Domain.Entities.HumanResource
 {
     public class EmployeeState
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string CompanyId { get; set; }
         public string SiteId { get; set; }
         public string EmployeeId { get; set; }
@@ -19,6 +19,7 @@ namespace XERP.Domain.Entities.HumanResource
         public int PositionId { get; set; }
         public int EmploymentTypeId { get; set; }
         public int EmployeeRankId { get; set; }
+        public int TeamId { get; set; }
         public ChangeStateType ChangeType { get; set; }
         public string CreatedById { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -32,6 +33,7 @@ namespace XERP.Domain.Entities.HumanResource
         public Position Positions { get; set; }
         public EmploymentType EmploymentTypes { get; set; }
         public EmployeeRank EmployeeRanks { get; set; }
+        public Team Teams { get; set; }
 
 
     }

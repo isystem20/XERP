@@ -1,0 +1,4 @@
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.App\obj\Debug\netstandard2.0\XERP.App.csprojAssemblyReference.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.App\obj\Debug\netstandard2.0\XERP.App.csproj.CoreCompileInputs.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.App\obj\Debug\netstandard2.0\XERP.App.AssemblyInfoInputs.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.App\obj\Debug\netstandard2.0\XERP.App.AssemblyInfo.cs
