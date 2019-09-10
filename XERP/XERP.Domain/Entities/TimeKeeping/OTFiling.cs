@@ -9,6 +9,7 @@ namespace XERP.Domain.Entities.TimeKeeping
     public class OTFiling
     {
         public string Id { get; set; }
+        public string ReferenceNumber { get; set; }
         public string CompanyId { get; set; }
         public string EmployeeId { get; set; }
         public DateTime Date { get; set; }

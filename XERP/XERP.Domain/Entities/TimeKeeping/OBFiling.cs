@@ -10,6 +10,7 @@ namespace XERP.Domain.Entities.TimeKeeping
     public class OBFiling
     {
         public string Id { get; set; }
+        public string ReferenceNumber { get; set; }
         public string EmployeeId { get; set; }
         public DateTime StartDate { get; set; } //StartDate of OB
         public DateTime EndDate { get; set; }  //End of OB
