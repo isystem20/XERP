@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Domain\\XERP.Domain.csproj": {}
+    "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Domain\\XERP.Domain.csproj": {
+    "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Domain\\XERP.Domain.csproj",
+        "projectUniqueName": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj",
         "projectName": "XERP.Domain",
-        "projectPath": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Domain\\XERP.Domain.csproj",
-        "packagesPath": "C:\\Users\\John Perry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\John Perry\\Documents\\XERP\\XERP\\XERP.Domain\\obj\\",
+        "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj",
+        "packagesPath": "C:\\Users\\ADK\\.nuget\\packages\\",
+        "outputPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\John Perry\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ADK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -49,12 +51,7 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
           "warn": true
