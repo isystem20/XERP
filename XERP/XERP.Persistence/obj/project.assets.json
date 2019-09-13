@@ -1014,6 +1014,19 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "XERP.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "XERP.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/XERP.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XERP.Application.dll": {}
+        }
+      },
       "XERP.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3768,6 +3781,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "XERP.Application/1.0.0": {
+      "type": "project",
+      "path": "../XERP.Application/XERP.Application.csproj",
+      "msbuildProject": "../XERP.Application/XERP.Application.csproj"
+    },
     "XERP.Domain/1.0.0": {
       "type": "project",
       "path": "../XERP.Domain/XERP.Domain.csproj",
@@ -3782,6 +3800,7 @@
       "Microsoft.Extensions.Configuration.FileExtensions >= 2.2.0",
       "Microsoft.Extensions.Configuration.Json >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
+      "XERP.Application >= 1.0.0",
       "XERP.Domain >= 1.0.0"
     ]
   },
@@ -3818,6 +3837,9 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+            "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Application\\XERP.Application.csproj": {
+              "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Application\\XERP.Application.csproj"
+            },
             "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj": {
               "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj"
             }
