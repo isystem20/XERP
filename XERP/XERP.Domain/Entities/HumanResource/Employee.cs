@@ -20,14 +20,14 @@ namespace XERP.Domain.Entities.HumanResource
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string Suffix { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
         public string BirthPlace { get; set; }
         public string CivilStatus { get; set; }
         public string NationalityId { get; set; }
         public string CreatedById { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
         public string LastModifiedById { get; set; }
-        public DateTime LastModifiedAt { get; set; }
+        public DateTime? LastModifiedAt { get; set; }
         public int VersionNo { get; set; }
         public String Status { get; set; }
 

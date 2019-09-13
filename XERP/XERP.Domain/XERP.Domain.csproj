@@ -1,11 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="SQL Scripts\Functions\" />
+    <Compile Remove="SQL Scripts\**" />
+    <EmbeddedResource Remove="SQL Scripts\**" />
+    <None Remove="SQL Scripts\**" />
   </ItemGroup>
 
 </Project>
