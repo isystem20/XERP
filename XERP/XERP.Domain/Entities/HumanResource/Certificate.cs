@@ -13,7 +13,7 @@ namespace XERP.Domain.Entities.HumanResource
         {
             EmployeeCertificates = new HashSet<EmployeeCertificate>();
         }
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Code { get; set; }
         public string CompanyId { get; set; }
         public string Name { get; set; }
