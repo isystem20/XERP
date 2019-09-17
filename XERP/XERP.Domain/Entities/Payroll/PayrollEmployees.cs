@@ -32,6 +32,10 @@ namespace XERP.Domain.Entities.Payroll
         public decimal Deductions { get; set; }
         public decimal NetPay { get; set; }
 
+        public Employee Employees { get; set; }
+        public EmployeePayrollScheme EmployeePayrollSchemes { get; set; }
+        public PayrollPeriod PayrollPeriods { get; set; }
+        public Payroll Payrolls { get; set; }
 
     }
 }

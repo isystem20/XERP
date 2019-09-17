@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XERP.Domain.Entities;
+using XERP.DataModel.HR;
 using XERP.Domain.Entities.HumanResource;
 using static XERP.Persistence.XERPDbContext;
+using XERP.Domain.Entities.Common;
 
 namespace XERP.Persistence
 {

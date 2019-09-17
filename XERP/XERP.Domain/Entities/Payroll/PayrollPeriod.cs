@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XERP.Domain.Entities.Payroll
 {
-    public class PayrollPeriods {
+    public class PayrollPeriod {
         public string Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
