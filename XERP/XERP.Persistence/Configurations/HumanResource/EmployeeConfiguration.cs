@@ -38,16 +38,16 @@ namespace XERP.Persistence.Configurations.HumanResource
             builder.Property(e => e.CreatedAt)
                 .IsRequired()
                 .HasColumnType("datetime")
-                .HasDefaultValue("getdate()");
+                .HasDefaultValueSql("getdate()");
             builder.Property(e => e.LastModifiedById)
                 .IsRequired()
                 .HasMaxLength(50);
             builder.Property(e => e.LastModifiedAt)
                 .IsRequired()
                 .HasColumnType("datetime")
-                .HasDefaultValue("getdate()");
+                .HasDefaultValueSql("getdate()");
             builder.Property(e => e.VersionNo)
-                .HasDefaultValue("((1))");
+                .HasDefaultValue(1);
             builder.Property(e => e.Status)
                 .IsRequired()
                 .HasDefaultValue("ACTIVE");

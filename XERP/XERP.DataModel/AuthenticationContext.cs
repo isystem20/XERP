@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using XERP.DataModel.HR;
 using XERP.DataModel.PAYROLL;
 using XERP.DataModel.SYSTEM;
+using XERP.Domain.Entities.Payroll;
 
 namespace XERP.DataModel
 {

@@ -1,9 +1,7 @@
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Persistence.deps.json
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Persistence.dll
-C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.dll
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Domain.dll
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Domain.pdb
-C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\Microsoft.EntityFrameworkCore.xml
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.csprojAssemblyReference.cache
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.csproj.CoreCompileInputs.cache
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.AssemblyInfoInputs.cache
@@ -11,3 +9,10 @@ C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.csproj.CopyComplete
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Persistence.runtimeconfig.json
 C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Persistence.runtimeconfig.dev.json
+C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Application.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Persistence.pdb
+C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\bin\Debug\netcoreapp2.2\XERP.Application.pdb
+C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Persistence\obj\Debug\netcoreapp2.2\XERP.Persistence.pdb

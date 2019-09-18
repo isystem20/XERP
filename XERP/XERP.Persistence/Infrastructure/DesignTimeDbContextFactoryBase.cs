@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -7,9 +8,9 @@ using System.IO;
 namespace XERP.Persistence.Infrastructure
 {
     public abstract class DesignTimeDbContextFactoryBase<TContext> : 
-        IDesignTimeDbContextFactory<TContext> where TContext : DbContext
+        IDesignTimeDbContextFactory<TContext> where TContext : IdentityDbContext
     {
-        private const string ConnectionStringName = "NEX_ARC_DB";
+        private const string ConnectionStringName = "NEXDatabase";
         private const string AspNetCoreEnvironment = "ASPNETCORE_ENVIRONMENT";
 
 
