@@ -23,6 +23,7 @@ namespace XERP.Domain.Entities.HumanResource
         public string LastModifiedById { get; set; }
         public DateTime LastModifiedAt { get; set; }
         public int VersionNo { get; set; }
+        public string Status { get; set; }
         public Company Companies { get; set; }
 
         public ICollection<EmployeeState> EmployeeStates { get; set; }

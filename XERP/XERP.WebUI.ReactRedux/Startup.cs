@@ -51,8 +51,8 @@ namespace XERP.WebUI.ReactRedux
                 options.UseSqlServer(Configuration.GetConnectionString("NEXDatabase")));
 
             services
-                .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))
-                //.AddMvc()
+                //.AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))
+                .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             //.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateCustomerCommandValidator>());
 

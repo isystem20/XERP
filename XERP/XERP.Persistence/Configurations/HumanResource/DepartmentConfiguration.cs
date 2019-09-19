@@ -9,6 +9,9 @@ namespace XERP.Persistence.Configurations.HumanResource
         public void Configure(EntityTypeBuilder<Department> builder)
         {
             builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id).HasColumnName("Id");
+
+
         }
     }
 }
