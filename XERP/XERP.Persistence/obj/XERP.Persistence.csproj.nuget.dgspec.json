@@ -54,11 +54,7 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
-            "Microsoft.AspNet.Identity.Core": {
-              "target": "Package",
-              "version": "[2.2.2, )"
-            },
-            "Microsoft.Extensions.Identity.Core": {
+            "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
@@ -215,6 +211,9 @@
             "projectReferences": {
               "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj": {
                 "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj"
+              },
+              "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj": {
+                "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj"
               }
             }
           }

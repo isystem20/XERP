@@ -6,6 +6,7 @@ using XERP.Domain.Entities.Common;
 using XERP.Domain.Entities.CompanyResource;
 using XERP.Domain.Entities.HumanResource;
 using XERP.Domain.Entities.Payroll;
+using XERP.Domain.Entities.Security;
 using XERP.Domain.Entities.TimeKeeping;
 
 namespace XERP.Application.Interfaces
@@ -38,6 +39,12 @@ namespace XERP.Application.Interfaces
         DbSet<ChangeShiftFiling> ChangeShiftFilings { get; set; }
 
         #endregion
+
+
+        #region Security
+        DbSet<RefreshToken> RefreshTokens { get; set; }
+        #endregion
+
 
         #region Common
         DbSet<Company> Companies { get; set; }

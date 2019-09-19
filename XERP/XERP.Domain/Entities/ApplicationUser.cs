@@ -21,6 +21,7 @@ namespace XERP.Domain.Entities
         public bool UserCantChangePassword { get; set; }
         public bool UserChangePasswordNextLogon { get; set; }
         public string ActivationCode { get; set; }
+        public string Token { get; set; }
         public string SecurityStamp { get; set; }
         public string SecurityHash { get; set; }
         public string ConcurrencyStamp { get; set; }

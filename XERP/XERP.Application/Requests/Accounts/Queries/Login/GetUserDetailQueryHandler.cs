@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,7 +9,8 @@ using System.Threading.Tasks;
 using XERP.Application.Exceptions;
 using XERP.Application.Interfaces;
 using XERP.Domain.Entities;
-using XERP.Infrastructure.Security.JWT;
+using XERP.Application.Security.JWT;
+using Microsoft.AspNetCore.Identity;
 
 namespace XERP.Application.Requests.Accounts.Queries.Login
 {
@@ -18,10 +18,10 @@ namespace XERP.Application.Requests.Accounts.Queries.Login
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IJWTTokenStore _jwTokenStore;
+        private readonly IJwTokenStore _jwTokenStore;
         private readonly IXERPDbContext _context;
 
-        public GetUserDetailQueryHandler(IXERPDbContext context, IJWTTokenStore jwTokenStore, SignInManager<ApplicationUser> signInManager)
+        public GetUserDetailQueryHandler(IXERPDbContext context, IJwTokenStore jwTokenStore, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
             _signInManager = signInManager;
@@ -64,7 +64,7 @@ namespace XERP.Application.Requests.Accounts.Queries.Login
 
                     }
 
-                    return CustomerDetailModel.Create(entity);
+                    return UserLoginModel.Create(user);
 
                 }
                 else

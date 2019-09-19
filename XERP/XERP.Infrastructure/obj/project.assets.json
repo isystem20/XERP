@@ -35,6 +35,16 @@
         "runtime": {
           "bin/placeholder/XERP.Common.dll": {}
         }
+      },
+      "XERP.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/XERP.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XERP.Domain.dll": {}
+        }
       }
     }
   },
@@ -186,12 +196,18 @@
       "type": "project",
       "path": "../XERP.Common/XERP.Common.csproj",
       "msbuildProject": "../XERP.Common/XERP.Common.csproj"
+    },
+    "XERP.Domain/1.0.0": {
+      "type": "project",
+      "path": "../XERP.Domain/XERP.Domain.csproj",
+      "msbuildProject": "../XERP.Domain/XERP.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "XERP.Common >= 1.0.0"
+      "XERP.Common >= 1.0.0",
+      "XERP.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -229,6 +245,9 @@
           "projectReferences": {
             "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj": {
               "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj"
+            },
+            "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj": {
+              "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj"
             }
           }
         }

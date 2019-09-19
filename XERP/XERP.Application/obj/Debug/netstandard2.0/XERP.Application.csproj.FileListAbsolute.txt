@@ -14,3 +14,10 @@ C:\Windows\extra\htdocs\test\XERP\XERP.Application\obj\Debug\netstandard2.0\XERP
 C:\Windows\extra\htdocs\test\XERP\XERP.Application\obj\Debug\netstandard2.0\XERP.Application.pdb
 C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Identity.dll
 C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Identity.xml
+C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\XERP.Common.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\XERP.Infrastructure.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\System.IdentityModel.Tokens.Jwt.pdb
+C:\Windows\extra\htdocs\test\XERP\XERP.Application\bin\Debug\netstandard2.0\System.IdentityModel.Tokens.Jwt.xml

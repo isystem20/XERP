@@ -8,6 +8,7 @@ using XERP.Domain.Entities.Common;
 using XERP.Domain.Entities.CompanyResource;
 using XERP.Domain.Entities.HumanResource;
 using XERP.Domain.Entities.Payroll;
+using XERP.Domain.Entities.Security;
 using XERP.Domain.Entities.TimeKeeping;
 
 namespace XERP.Persistence
@@ -43,6 +44,11 @@ namespace XERP.Persistence
         #region TimeKeeping and SelfService
         public DbSet<ChangeShiftFiling> ChangeShiftFilings { get; set; }
 
+        #endregion
+
+
+        #region Security
+        DbSet<RefreshToken> RefreshTokens { get; set; }
         #endregion
 
         #region Common

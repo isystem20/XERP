@@ -17,13 +17,9 @@ namespace XERP.WebUI.ReactRedux.Controllers
         public async Task<IActionResult> Login([FromBody]UserLoginModel model)
         {
 
-            var user = await Mediator.Send(new CheckCredentials { Id = id })
+            var user = await Mediator.Send(new GetUserDetailQuery { UserName = model.UserName, Password = model.Password });
 
             return Ok();
-
-            //await Mediator.Send(command);
-
-            //return NoContent();
         }
     }
 }
