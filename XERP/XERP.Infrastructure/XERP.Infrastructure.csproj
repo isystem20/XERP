@@ -5,14 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="NotificationService.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="NotificationService.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\XERP.Application\XERP.Application.csproj" />
     <ProjectReference Include="..\XERP.Common\XERP.Common.csproj" />
     <ProjectReference Include="..\XERP.Domain\XERP.Domain.csproj" />
   </ItemGroup>

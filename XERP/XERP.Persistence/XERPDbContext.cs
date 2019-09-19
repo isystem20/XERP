@@ -48,7 +48,7 @@ namespace XERP.Persistence
 
 
         #region Security
-        DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         #endregion
 
         #region Common

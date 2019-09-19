@@ -29,7 +29,7 @@ namespace XERP.Domain.Entities.HumanResource
         public string LastModifiedById { get; set; }
         public DateTime? LastModifiedAt { get; set; }
         public int VersionNo { get; set; }
-        public String Status { get; set; }
+        public string Status { get; set; }
 
         public Nationality Nationality { get; set; }
 

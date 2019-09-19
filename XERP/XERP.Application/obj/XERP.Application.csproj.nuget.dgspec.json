@@ -34,9 +34,6 @@
             "projectReferences": {
               "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj": {
                 "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj"
-              },
-              "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Infrastructure\\XERP.Infrastructure.csproj": {
-                "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Infrastructure\\XERP.Infrastructure.csproj"
               }
             }
           }
@@ -50,6 +47,14 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -58,60 +63,6 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
-    "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj",
-        "projectName": "XERP.Common",
-        "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj",
-        "packagesPath": "C:\\Users\\ADK\\.nuget\\packages\\",
-        "outputPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\ADK\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "dependencies": {
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -155,67 +106,6 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netstandard2.0": {
-          "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
-    "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Infrastructure\\XERP.Infrastructure.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Infrastructure\\XERP.Infrastructure.csproj",
-        "projectName": "XERP.Infrastructure",
-        "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Infrastructure\\XERP.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ADK\\.nuget\\packages\\",
-        "outputPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Infrastructure\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\ADK\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "netstandard2.0": {
-            "projectReferences": {
-              "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj": {
-                "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Common\\XERP.Common.csproj"
-              },
-              "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj": {
-                "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Domain\\XERP.Domain.csproj"
-              }
-            }
           }
         },
         "warningProperties": {
