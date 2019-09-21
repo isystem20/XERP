@@ -59,30 +59,40 @@ export class Signin extends Component {
             component.handleLoginData(response);
         })
         .catch(function (error) {
-            //console.log(error.response);
+            console.log(error);
             component.handleLoginData(error.response);
         });
 
     }
 
     handleLoginData(response) {
+        console.log(response);
         if (response != null) {
             let data = response.data;
-            if (response.status == 200 && data.success) {
-                this.setState({ success: data.success, result: data.result });
+            if (data.success) {
+                this.setState({
+                    validating: false,
+                    success: data.success,
+                    result: data.result
+                });
                 this.props.history.push('/dashboard');
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('username', this.state.username);
                 localStorage.setItem('password', this.state.password);
-            } else if (response.status == 401 && !data.success) {
-                this.setState({ success: data.success, result: data.result });
             } else {
-                this.setState({ success: false, result: "Cannot be validated. Please try again." });
+                this.setState({
+                    validating: false,
+                    success: data.success,
+                    result: data.result
+                });
             }
         } else {
-            this.setState({ success: false, result: "Cannot be validated. Please try again." });
+            this.setState({
+                validating: false,
+                success: false,
+                result: "Cannot be validated. Please try again."
+            });
         }
-        this.setState({ validating: false, response: response });    
     }
 
     resultInfo() {
@@ -169,7 +179,7 @@ export class Signin extends Component {
                             </div>
                         </div>
                         <div className="content content-full font-size-sm text-muted text-center">
-                            <strong>{"{ App name here 0.0 }"}</strong> &copy; <span data-toggle="year-copy"></span>
+                            <strong>{"XERP 0.0"}</strong> &copy; <span data-toggle="year-copy"></span>
                         </div>
                     </div>
                 </div>

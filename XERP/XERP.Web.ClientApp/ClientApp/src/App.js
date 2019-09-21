@@ -23,7 +23,8 @@ export default class App extends Component {
                     <Layout>
                         <Route exact path='/dashboard' component={Dashboard} />
                         <Route exact path='/departments' component={Departments} />
-                        <Route exact path='/department/:id' component={DepartmentSingle} />
+                          <Route exact path='/department/:id' component={DepartmentSingle} />
+                          <Route exact path='/department' component={DepartmentSingle} />
                     </Layout>
 
 

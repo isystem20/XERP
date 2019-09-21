@@ -2,15 +2,23 @@
 import axios from 'axios'
 import LoadScript from '../../../functions/load-scripts/LoadScript';
 import Notify from '../../../functions/Notify';
+import { CircularLoading } from '../../../forms/CircularLoading';
+import One from '../../../functions/One';
+import Swal from 'sweetalert2';
 
 export class DepartmentSingle extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+
+            addRecord: this.props.match.params.id == null,      // True when view is for Add, otherwise user is Updating.
+            isSaving: false,                                    // True when user clicks on Submit, otherwise False.
+
             id: this.props.match.params.id,
-            loading: true,
-            data: [],
+            loading: true,                                      // True when data is being requested.
+            data: [],                                           // Holds the masterlist record.
+
             deptid: null,
             code: "",
             name: "",
@@ -18,9 +26,11 @@ export class DepartmentSingle extends Component {
             description: "",
             createdbyid: "25708efb-6ff3-46bc-ad26-b0879d6650a5",
             lastmodifiedbyid: "25708efb-6ff3-46bc-ad26-b0879d6650a5",
+
         }
 
         this.fetchData = this.fetchData.bind(this);
+        console.log(this.state)
 
     }
 
@@ -28,7 +38,10 @@ export class DepartmentSingle extends Component {
     componentWillMount() {
 
         //load notification script
-        LoadScript(['notification','notificationhelper'], document.body, false);
+        LoadScript(['notification', 'notificationhelper'], document.body, false);
+
+        //add page-loader div
+        One.AddPageLoader(document.body);
 
         this.fetchData();
     }
@@ -43,15 +56,12 @@ export class DepartmentSingle extends Component {
             axios({
                 method: 'get', //get to fetch the data
                 url: 'http://dummy.restapiexample.com/api/v1/employee/' + this.state.id,
-            })
-                .then(function (response) {
-
-                    component.setState({
-                        data: response.data, // new Promise ..
-                        loading: false
-                    });
-
+            }).then(function (response) {
+                component.setState({
+                    data: response.data, // new Promise ..
+                    loading: false
                 });
+            });
         }
 
     }
@@ -70,122 +80,181 @@ export class DepartmentSingle extends Component {
 
         e.preventDefault();
 
-        const { code, name, description } = this.state
+        One.Loader('show');
 
+        let component = this;
+        this.setState({ isSaving: true });
+
+        const { id, code, name, description } = this.state;
         let postData = {
+            id: id,
             name: name,
             age: code,
             salary: description
-        }
+        };
 
-        //Use axios as http post
         axios({
             method: 'post',
             url: 'http://dummy.restapiexample.com/api/v1/create',
             data: postData
-        })
-            .then(function (response) {
-
-                Notify('hi','success');
-                console.log(response);
-
-            });
+        }).then(function (response) {
+            //console.log(response);
+            //Notify('hi', 'success');
+            One.Loader('hide');
+            Swal.fire('Department added!', '', 'success')
+            component.setState({ isSaving: false });
+        }).catch(function (error) {
+            //console.log(error);
+            One.Loader('hide');
+            Swal.fire('Department not saved!', '', 'error')
+            component.setState({ isSaving: false });
+        });
     }
 
+    renderHeader() {
+        let isSaving = this.state.isSaving;
+        if (this.state.addRecord) {
+            return (
+                <div className="block-header block-header-default">
+                    <h3 className="block-title">Add new department</h3>
+                    <div className="block-options">
+                        <button
+                            onClick={e => this.handleSubmit(e)}
+                            type="submit"
+                            className="btn btn-success btn-sm btn-primary"
+                            data-toggle="click-ripple"
+                            disabled={isSaving}>
+                            Submit
+                        </button>
+                        <button
+                            onClick={() => this.handleReset()}
+                            type="reset"
+                            className="btn btn-warning btn-sm btn-secondary"
+                            data-toggle="click-ripple"
+                            disabled={isSaving}>
+                            Reset
+                        </button>
+                    </div>
+                </div>);
+        } else {
+            return (
+                <div className="block-header block-header-default">
+                    <h3 className="block-title">Update department</h3>
+                    <div className="block-options">
+                        <CircularLoading className="float-right" show={isSaving} />
+                        <button
+                            onClick={e => this.handleSubmit(e)}
+                            type="submit"
+                            className="btn btn-success btn-sm btn-primary"
+                            data-toggle="click-ripple">
+                            Update
+                        </button>
+                    </div>
+                </div>);
+        }
+    }
 
+    renderCreationFields() {
+        return (
+            <div class="form-group form-row">
+                <div class="col-4">
+                    <label>Created By</label>
+                    <input
+                        disabled="true"
+                        type="text"
+                        className="form-control" />
+                </div>
+                <div class="col-4">
+                    <label>Created On</label>
+                    <input
+                        disabled="true"
+                        type="text"
+                        className="form-control" />
+                </div>
+            </div>
+        );
+    }
 
     render() {
-
-        //let data = this.state.loading ? ;
-
+        let isAdding = this.state.addRecord;
+        let isSaving = this.state.isSaving;
         return (
-            <main id="main-container">
-
-    
+            <main id="main-container">                   
                 <div className="bg-body-light">
                     <div className="content content-full">
                         <div className="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
                             <h1 className="flex-sm-fill h3 my-2">
-                                Block Forms <small className="d-block d-sm-inline-block mt-2 mt-sm-0 font-size-base font-w400 text-muted">Easily integrated in your blocks.</small>
+                                Departments <br/><small className="d-block d-sm-inline-block mt-2 mt-sm-0 font-size-base font-w400 text-muted">Add or modify department information.</small>
                             </h1>
                             <nav className="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                                 <ol className="breadcrumb breadcrumb-alt">
-                                    <li className="breadcrumb-item">Blocks</li>
+                                    <li className="breadcrumb-item">Maintenance</li>
                                     <li className="breadcrumb-item" aria-current="page">
-                                        <a className="link-fx" href="">Forms</a>
+                                        <a className="link-fx" href="">Departments</a>
                                     </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
                 </div>
-    
+
                 <div className="content">
-        
-                    <div className="row">
-                        <div className="col-md-12">
-                                <div className="block">
-                                    <div className="block-header block-header-default">
-                                        <h3 className="block-title">Block Form</h3>
-                                    <div className="block-options">
-                                            <button onClick={e => this.handleSubmit(e)} type="submit" className="btn btn-sm btn-primary">
-                                                Submit
-                                            </button>
-                                            <button onClick={() => this.handleReset()} type="reset" className="btn btn-sm btn-secondary">
-                                                Reset
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="block-content">
-                                        <div className="row justify-content-center py-sm-3 py-md-5">
-                                            <div className="col-sm-10 col-md-8">
-                                                <div className="form-group">
-                                                    <label for="block-form1-username">Code</label>
-                                                    <input type="text"
-                                                        onChange={e => this.handleOnChange(e)}
-                                                        className="form-control"
-                                                        name="code"
-                                                        value={this.state.code}
-                                                        placeholder="Please input unique code" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label for="block-form1-password">Name</label>
-                                                    <input type="text"
-                                                        onChange={e => this.handleOnChange(e)}
-                                                        className="form-control"
-                                                        name="name"
-                                                        value={this.state.name}
-                                                        placeholder="Please enter record name" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label for="block-form1-password">Description</label>
-                                                    <textarea
-                                                        className="form-control"
-                                                        onChange={e => this.handleOnChange(e)}
-                                                        name="description" rows="4"
-                                                        value={this.state.description}
-                                                        placeholder="Short description for this record"></textarea>
-                                                </div>
-
-
-                                                <div className="form-group">
-                                                    <div className="custom-control custom-checkbox custom-control-primary">
-                                                        <input type="checkbox" className="custom-control-input" id="block-form1-remember-me" name="block-form1-remember-me" />
-                                                        <label className="custom-control-label" for="block-form1-remember-me">Remember Me?</label>
-                                                    </div>
-                                                </div>
+                    <div class="block">
+                        {this.renderHeader()}
+                        <div class="block-content block-content-full">
+                            <div class="row push">
+                                <div class="col-lg-10">
+                                    <div>
+                                        <div class="form-group form-row">
+                                            <div class="col-4">
+                                                <label>Code</label>
+                                                <input
+                                                    name="code"
+                                                    onChange={e => this.handleOnChange(e)}
+                                                    value={this.state.code}
+                                                    disabled={!isAdding || isSaving}
+                                                    type="text"
+                                                    className="form-control"
+                                                    autoComplete="false"
+                                                    autoCorrect="false"/>
                                             </div>
                                         </div>
+                                        <div class="form-group form-row">
+                                            <div class="col-10">
+                                                <label>Name</label>
+                                                <input
+                                                    name="name"
+                                                    onChange={e => this.handleOnChange(e)}
+                                                    value={this.state.name}
+                                                    disabled={isSaving}
+                                                    type="text"
+                                                    className="form-control"
+                                                    autoComplete="false"
+                                                    autoCorrect="false" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-row">
+                                            <div class="col-10">
+                                                <label>Description</label>
+                                                <textarea
+                                                    name="description"
+                                                    onChange={e => this.handleOnChange(e)}
+                                                    value={this.state.description}
+                                                    disabled={isSaving}
+                                                    className="form-control"
+                                                    rows="3"
+                                                    autoComplete="false"
+                                                    autoCorrect="false"/>
+                                            </div>
+                                        </div>
+                                        {isAdding ? null : this.renderCreationFields()}
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                    </div>
-        
-                </div>
-   
-
-            </main>            
-            
+                    </div>                    
+                </div>  
+            </main>
             )
     }
 }
