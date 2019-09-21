@@ -11,7 +11,7 @@ namespace XERP.DataModel.SYSTEM
     public class Clients
     {
         [Required]
-        public Guid Id { get; set; }
+        public string Id { get; set; } = new Guid().ToString();
         [Required]
         [Column(TypeName = "varchar(50)")]
         public string Code { get; set; }

@@ -1,0 +1,17 @@
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\bin\Debug\netstandard2.0\XERP.Domain.deps.json
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\bin\Debug\netstandard2.0\XERP.Domain.dll
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\bin\Debug\netstandard2.0\XERP.Domain.pdb
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.AssemblyInfoInputs.cache
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.AssemblyInfo.cs
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.dll
+C:\Users\Public\Projects\Study\XERP\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.pdb
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\bin\Debug\netstandard2.0\XERP.Domain.deps.json
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\bin\Debug\netstandard2.0\XERP.Domain.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\bin\Debug\netstandard2.0\XERP.Domain.pdb
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.csproj.CoreCompileInputs.cache
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.AssemblyInfoInputs.cache
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.AssemblyInfo.cs
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.dll
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.pdb
+C:\Windows\extra\htdocs\test\XERP\XERP.Domain\obj\Debug\netstandard2.0\XERP.Domain.csprojAssemblyReference.cache

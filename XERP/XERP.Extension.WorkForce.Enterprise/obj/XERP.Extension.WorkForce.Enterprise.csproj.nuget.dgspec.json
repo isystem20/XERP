@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\A_XERP\\XERP\\XERP.Extension.WorkForce.Enterprise\\XERP.Extension.WorkForce.Enterprise.csproj": {}
   },
   "projects": {
@@ -12,13 +13,33 @@
         "projectPath": "D:\\A_XERP\\XERP\\XERP.Extension.WorkForce.Enterprise\\XERP.Extension.WorkForce.Enterprise.csproj",
         "packagesPath": "C:\\Users\\torou\\.nuget\\packages\\",
         "outputPath": "D:\\A_XERP\\XERP\\XERP.Extension.WorkForce.Enterprise\\obj\\",
+=======
+    "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Extension.WorkForce.Enterprise\\XERP.Extension.WorkForce.Enterprise.csproj": {}
+  },
+  "projects": {
+    "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Extension.WorkForce.Enterprise\\XERP.Extension.WorkForce.Enterprise.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Extension.WorkForce.Enterprise\\XERP.Extension.WorkForce.Enterprise.csproj",
+        "projectName": "XERP.Extension.WorkForce.Enterprise",
+        "projectPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Extension.WorkForce.Enterprise\\XERP.Extension.WorkForce.Enterprise.csproj",
+        "packagesPath": "C:\\Users\\ADK\\.nuget\\packages\\",
+        "outputPath": "C:\\Windows\\extra\\htdocs\\test\\XERP\\XERP.Extension.WorkForce.Enterprise\\obj\\",
+>>>>>>> 74b02fc5d7203f6c9dd38d12a802f2486cae8fc7
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\torou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+          "C:\\Users\\ADK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+>>>>>>> 74b02fc5d7203f6c9dd38d12a802f2486cae8fc7
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

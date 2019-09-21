@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using XERP.DataModel.HR;
 using XERP.DataModel.PAYROLL;
 using XERP.DataModel.SYSTEM;
+using XERP.Domain.Entities.Payroll;
 
 namespace XERP.DataModel
 {
@@ -79,11 +80,6 @@ namespace XERP.DataModel
             base.OnModelCreating(builder);
         }
 
-
-        /// <summary>
-        /// Seed User
-        /// </summary>
-        /// <param name="userManager">User Manager</param>
         public static void SeedUser(UserManager<ApplicationUsers> userManager)
         {
             if (userManager.FindByEmailAsync("sysadmin@xerp.com").Result == null)
